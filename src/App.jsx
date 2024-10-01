@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './App.css' 
 
 function App() {
   const [inputValue, setInputValue] = useState(0);
@@ -33,7 +34,7 @@ function App() {
 
   return (
     <div className="app">
-      <h1>Unit Conversion Calculator</h1>
+      <h1 >Unit Conversion Calculator</h1>
       <div className="input-group">
         <input
           type="number"
@@ -69,7 +70,7 @@ function App() {
             <option value="cups">Cups</option>
           </optgroup>
         </select>
-        <button onClick={handleConvert}>Convert</button>
+        <button onClick={handleConvert} className="bg-red-400">Convert</button>
       </div>
       {result !== null && <h2>Result: {result}</h2>}
     </div>
