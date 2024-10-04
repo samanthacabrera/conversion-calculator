@@ -2,9 +2,11 @@ import React from "react";
 
 const Header = () => {
     return (
-        <h1 className="text-xl tracking-wide opacity-70 font-bold p-2 my-12 border-b-2 border-current">
-            Unit Conversion Calculators
-        </h1>
+        <div>
+            <h1 className="text-2xl tracking-wide lowercase font-semibold p-2 my-16 lg:my-2 lg:mt-20 hover:scale-105 duration-200">
+                Calcalooza
+            </h1>
+        </div>
     )
 }
 

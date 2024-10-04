@@ -29,7 +29,7 @@ const VolumeConverter = () => {
   };
 
   return (
-    <div className="flex flex-col items-center p-8 bg-orange-200 space-y-6">
+    <div className="flex flex-col items-center p-8 bg-orange-200 space-y-6 rounded">
       <h2 className="text-2xl tracking-wide">{conversionData.title}</h2>
       <div className="flex flex-col items-center space-y-4">
         <div className="flex items-center space-x-2">

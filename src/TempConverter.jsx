@@ -54,7 +54,7 @@ const TemperatureConverter = () => {
     };
 
     return (
-        <div className="flex flex-col items-center p-8 bg-blue-200 space-y-6">
+        <div className="flex flex-col items-center p-8 bg-blue-200 space-y-6 rounded">
             <h2 className="text-2xl tracking-wide">Temperature Converter</h2>
             <div className="flex flex-col items-center space-y-4">
                 <div className="flex items-center space-x-2">
