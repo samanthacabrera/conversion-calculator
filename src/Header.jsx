@@ -2,7 +2,9 @@ import React from "react";
 
 const Header = () => {
     return (
-        <h1 className="text-2xl tracking-wide my-12">Unit Conversion Calculator</h1>
+        <h1 className="text-xl tracking-wide font-bold p-2 my-12 border-b-2 border-current">
+            Unit Conversion Calculators
+        </h1>
     )
 }
 

@@ -1,13 +1,15 @@
 import React from 'react';
 import Header from './Header';
-import Converter from './Converter';
+import ConverterCircle from './ConverterCircle';
 
 const App = () => {
   return (
-    <div className="flex flex-col items-center">
-      <Header/>
-      <Converter />
-      <a href="https://github.com/samanthacabrera" target="_blank" rel="noopener noreferrer" className="absolute bottom-0 right-0 pr-1">
+    <div className="flex flex-col items-center min-h-screen">
+      <Header />
+      
+      <ConverterCircle /> 
+
+      <a href="https://github.com/samanthacabrera" target="_blank" rel="noopener noreferrer" className="relative lg:absolute bottom-0 opacity-20">
         made by <span className="hover:underline hover:italic">sam cabrera</span>
       </a>
     </div>
