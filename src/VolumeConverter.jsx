@@ -28,6 +28,12 @@ const VolumeConverter = () => {
     }
   };
 
+  const handleSwapUnits = () => {
+    setUnitFrom(unitTo);
+    setUnitTo(unitFrom);
+    setResult(null);
+  };
+
   return (
     <div className="flex flex-col items-center p-8 bg-orange-200 space-y-6 rounded">
       <h2 className="text-2xl tracking-wide">{conversionData.title}</h2>
@@ -56,7 +62,14 @@ const VolumeConverter = () => {
             ))}
           </select>
         </div>
-        <p className="text-xl text-gray-700">&darr;</p>
+        <div className="flex flex-col items-center">
+          <button
+            onClick={handleSwapUnits}
+            className="hover:scale-105 "
+          >
+            <i className="fas fa-exchange-alt text-lg transform rotate-90"></i>
+          </button>
+        </div>
         <div className="flex items-center">
           {result !== null && (
             <h3 className="p-2 bg-white rounded-lg shadow-md">

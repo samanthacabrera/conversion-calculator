@@ -23,7 +23,6 @@ export const conversionData = {
     conversions: {
         liters: 1,
         milliliters: 1000,
-        centiliters: 100,
-        deciliters: 10,
+
     }
 };
