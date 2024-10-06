@@ -7,7 +7,7 @@ const App = () => {
     <div className="flex flex-col items-center min-h-screen">
       <Header />
       
-      <ConverterCircle /> 
+      <ConverterCircle/>
 
       <a href="https://github.com/samanthacabrera" target="_blank" rel="noopener noreferrer" className="relative lg:absolute bottom-0 opacity-20">
         made by <span className="hover:underline hover:italic">sam cabrera</span>
