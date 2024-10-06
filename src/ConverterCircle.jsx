@@ -21,7 +21,7 @@ const ConverterCircle = () => {
        {/* Desktop view */}
       <div className="hidden lg:flex lg:justify-center lg:items-center lg:w-full lg:h-full lg:mt-24 space-x-4">
         {converterTypes.map((converter) => (
-          <div key={converter.value} className="w-1/4">
+          <div key={converter.value} className="w-1/4 transition duration-300 hover:scale-110 hover:shadow-lg rounded-md ">
             <Converter conversionType={converter.value} />
           </div>
         ))}
