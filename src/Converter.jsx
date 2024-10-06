@@ -7,8 +7,15 @@ const Converter = ({ conversionType }) => {
     const [unitTo, setUnitTo] = useState(Object.keys(conversionData[conversionType].units)[1]);
     const [result, setResult] = useState(null);
 
+    const bgColorMapping = {
+        length: 'bg-pink-200',
+        temperature: 'bg-blue-200',
+        volume: 'bg-orange-200',
+    };
+
+    const bgColor = bgColorMapping[conversionType] || 'bg-white'; 
+
     useEffect(() => {
-  
         setUnitFrom(Object.keys(conversionData[conversionType].units)[0]);
         setUnitTo(Object.keys(conversionData[conversionType].units)[1]);
         setResult(null);
@@ -30,7 +37,7 @@ const Converter = ({ conversionType }) => {
     };
 
     return (
-        <div className="flex flex-col items-center p-8 bg-blue-200 space-y-6 rounded">
+        <div className={`flex flex-col items-center p-8 ${bgColor} space-y-6 rounded`}>
             <h2 className="text-2xl tracking-wide">{conversionType.charAt(0).toUpperCase() + conversionType.slice(1)} Converter</h2>
             <div className="flex flex-col items-center space-y-4">
                 <div className="flex items-center space-x-2">
