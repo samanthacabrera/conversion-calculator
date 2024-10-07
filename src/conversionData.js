@@ -51,9 +51,12 @@ export const conversionData = {
     },
     time: {
         units: {
-            minutes: 1,
-            seconds: 60,
+            seconds: 1,
+            minutes: 60,
+            hours: 3600,
+            days: 86400,
+            weeks: 604800
         },
-        convert: (value, from, to) => value * (conversionData.time.units[to] / conversionData.time.units[from]),
+        convert: (value, from, to) => value * (conversionData.time.units[from] / conversionData.time.units[to]),
     }
 };

@@ -39,7 +39,7 @@ const Converter = ({ conversionType }) => {
     };
 
     return (
-        <div className={`flex flex-col items-center p-8 ${bgColor} space-y-6 rounded`}>
+        <div className={`flex flex-col items-center p-8 ${bgColor} space-y-6 rounded h-[310px] w-[300px]`}>
             <h2 className="text-xl tracking-wide">{conversionType.charAt(0).toUpperCase() + conversionType.slice(1)} Converter</h2>
             <div className="flex flex-col items-center space-y-4">
                 <div className="flex items-center space-x-2">
