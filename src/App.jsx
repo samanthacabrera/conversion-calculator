@@ -7,7 +7,7 @@ const App = () => {
   const [selectedCategory, setSelectedCategory] = useState('Common Converters');
 
   return (
-    <div className="flex flex-col items-center min-h-screen">
+    <div className="flex flex-col items-center min-h-screen text-gray-800">
       <Header />
       
       <Nav onSelectCategory={setSelectedCategory}/>
