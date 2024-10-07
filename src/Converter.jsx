@@ -8,7 +8,7 @@ const Converter = ({ conversionType }) => {
     const [result, setResult] = useState(null);
 
     const bgColorMapping = {
-        length: 'bg-green-200',
+        length: 'bg-lime-200',
         temperature: 'bg-blue-200',
         volume: 'bg-orange-200',
         weight: 'bg-pink-200',
@@ -23,10 +23,14 @@ const Converter = ({ conversionType }) => {
         setResult(null);
     }, [conversionType]);
 
+    useEffect(() => {
+        handleConvert(); 
+    }, [inputValue, unitFrom, unitTo]); 
+
     const handleConvert = () => {
         const parsedValue = parseFloat(inputValue);
         if (isNaN(parsedValue) || parsedValue < 0) {
-            alert('Please enter a valid positive number.');
+            setResult(null); 
             return;
         }
         const convertedValue = conversionData[conversionType].convert(parsedValue, unitFrom, unitTo);
@@ -41,7 +45,7 @@ const Converter = ({ conversionType }) => {
     return (
         <div className={`flex flex-col items-center p-8 ${bgColor} space-y-6 rounded h-[310px] w-[300px]`}>
             <h2 className="text-xl tracking-wide">{conversionType.charAt(0).toUpperCase() + conversionType.slice(1)} Converter</h2>
-            <div className="flex flex-col items-center space-y-4">
+            <div className="flex flex-col items-center space-y-8">
                 <div className="flex items-center space-x-2">
                     <input
                         type="number"
@@ -53,10 +57,7 @@ const Converter = ({ conversionType }) => {
                     />
                     <select
                         value={unitFrom}
-                        onChange={(e) => {
-                            setUnitFrom(e.target.value);
-                            setResult(null);
-                        }}
+                        onChange={(e) => setUnitFrom(e.target.value)}
                         className="p-2 rounded-lg bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
                     >
                         {Object.keys(conversionData[conversionType].units).map((unit) => (
@@ -75,10 +76,7 @@ const Converter = ({ conversionType }) => {
                     )}
                     <select
                         value={unitTo}
-                        onChange={(e) => {
-                            setUnitTo(e.target.value);
-                            setResult(null);
-                        }}
+                        onChange={(e) => setUnitTo(e.target.value)}
                         className="flex-1 ml-2 p-2 rounded-lg bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
                     >
                         {Object.keys(conversionData[conversionType].units).map((unit) => (
@@ -89,9 +87,6 @@ const Converter = ({ conversionType }) => {
                     </select>
                 </div>
             </div>
-            <button onClick={handleConvert} className="hover:underline">
-                Convert
-            </button>
         </div>
     );
 };
