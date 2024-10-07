@@ -35,7 +35,7 @@ const Converter = ({ conversionType }) => {
 
     const displayResult = () => {
         if (result === null) return null;
-        return result % 1 !== 0 ? result.toFixed(4) : Math.round(result);
+        return result % 1 !== 0 ? result.toFixed(6) : Math.round(result);
     };
 
     return (
