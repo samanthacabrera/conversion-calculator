@@ -41,5 +41,12 @@ export const conversionData = {
             }
             return convertedValue;
         }
+    },
+    weight: {
+        units: {
+            grams: 1000,
+            kilograms: 1,
+        },
+        convert: (value, from, to) => value * (conversionData.weight.units[to] / conversionData.weight.units[from]),
     }
 };

@@ -5,9 +5,10 @@ const converterTypes = [
   { value: 'length', label: 'Length' },
   { value: 'temperature', label: 'Temperature' },
   { value: 'volume', label: 'Volume' },
+  { value: 'weight', label: 'Weight' },
 ];
 
-const ConverterCircle = () => {
+const ConverterList = () => {
   return (
     <div className="relative w-full flex flex-col items-center">
       {/* Mobile view */}
@@ -30,4 +31,4 @@ const ConverterCircle = () => {
   );
 };
 
-export default ConverterCircle;
+export default ConverterList;

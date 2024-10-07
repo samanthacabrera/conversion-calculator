@@ -11,6 +11,7 @@ const Converter = ({ conversionType }) => {
         length: 'bg-pink-200',
         temperature: 'bg-blue-200',
         volume: 'bg-orange-200',
+        weight: 'bg-purple-200'
     };
 
     const bgColor = bgColorMapping[conversionType] || 'bg-white'; 
