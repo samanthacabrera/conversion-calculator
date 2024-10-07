@@ -8,10 +8,11 @@ const Converter = ({ conversionType }) => {
     const [result, setResult] = useState(null);
 
     const bgColorMapping = {
-        length: 'bg-pink-200',
+        length: 'bg-green-200',
         temperature: 'bg-blue-200',
         volume: 'bg-orange-200',
-        weight: 'bg-purple-200'
+        weight: 'bg-pink-200',
+        time: 'bg-indigo-200'
     };
 
     const bgColor = bgColorMapping[conversionType] || 'bg-white'; 

@@ -6,6 +6,7 @@ const converterTypes = [
   { value: 'temperature', label: 'Temperature' },
   { value: 'volume', label: 'Volume' },
   { value: 'weight', label: 'Weight' },
+   { value: 'time', label: 'Time' },
 ];
 
 const ConverterList = () => {

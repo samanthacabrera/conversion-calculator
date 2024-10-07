@@ -48,5 +48,12 @@ export const conversionData = {
             kilograms: 1,
         },
         convert: (value, from, to) => value * (conversionData.weight.units[to] / conversionData.weight.units[from]),
+    },
+    time: {
+        units: {
+            minutes: 1,
+            seconds: 60,
+        },
+        convert: (value, from, to) => value * (conversionData.time.units[to] / conversionData.time.units[from]),
     }
 };
