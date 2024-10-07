@@ -20,7 +20,7 @@ const ConverterList = () => {
         ))}
       </div>
        {/* Desktop view */}
-      <div className="hidden lg:flex lg:justify-center lg:items-center lg:w-[1200px] lg:mt-24 space-x-4">
+      <div className="hidden lg:flex lg:justify-center lg:items-center lg:w-full lg:py-24 lg:overflow-x-scroll lg:scroll-smooth space-x-24">
         {converterTypes.map((converter) => (
           <div key={converter.value} className="w-full transition duration-300 hover:scale-110 hover:shadow-lg rounded-md">
             <Converter conversionType={converter.value} />
