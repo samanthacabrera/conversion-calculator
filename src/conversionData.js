@@ -79,7 +79,8 @@ export const conversionData = {
             months: 2.628e+6,  // Approximated as 30.44 days
             years: 3.154e+7,   // Approximated as 365.24 days
         },
-        convert: (value, from, to) => value * (conversionData.time.units[from] / conversionData.time.units[to]),
+        convert: (value, from, to) => value * (conversionData.time.units[to] / conversionData.time.units[from]),
+        // convert: (value, from, to) => value * (conversionData.time.units[from] / conversionData.time.units[to]),
     }
 };
 

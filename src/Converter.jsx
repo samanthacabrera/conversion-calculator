@@ -1,27 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import { conversionData } from './conversionData';
 
-const Converter = ({ conversionType }) => {
+const Converter = ({ converterType }) => {
     const [inputValue, setInputValue] = useState('');
-    const [unitFrom, setUnitFrom] = useState(Object.keys(conversionData[conversionType].units)[0]);
-    const [unitTo, setUnitTo] = useState(Object.keys(conversionData[conversionType].units)[1]);
+    const [unitFrom, setUnitFrom] = useState(Object.keys(conversionData[converterType].units)[0]);
+    const [unitTo, setUnitTo] = useState(Object.keys(conversionData[converterType].units)[1]);
     const [result, setResult] = useState(null);
 
     const bgColorMapping = {
         length: 'bg-lime-200',
-        temperature: 'bg-blue-200',
+        temperature: 'bg-purple-200',
         volume: 'bg-orange-200',
         weight: 'bg-pink-200',
-        time: 'bg-indigo-200'
+        time: 'bg-yellow-200'
     };
 
-    const bgColor = bgColorMapping[conversionType] || 'bg-white'; 
+    const bgColor = bgColorMapping[converterType] || 'bg-white'; 
 
     useEffect(() => {
-        setUnitFrom(Object.keys(conversionData[conversionType].units)[0]);
-        setUnitTo(Object.keys(conversionData[conversionType].units)[1]);
+        setUnitFrom(Object.keys(conversionData[converterType].units)[0]);
+        setUnitTo(Object.keys(conversionData[converterType].units)[1]);
         setResult(null);
-    }, [conversionType]);
+    }, [converterType]);
 
     useEffect(() => {
         handleConvert(); 
@@ -33,7 +33,7 @@ const Converter = ({ conversionType }) => {
             setResult(null); 
             return;
         }
-        const convertedValue = conversionData[conversionType].convert(parsedValue, unitFrom, unitTo);
+        const convertedValue = conversionData[converterType].convert(parsedValue, unitFrom, unitTo);
         setResult(convertedValue);
     };
 
@@ -44,7 +44,7 @@ const Converter = ({ conversionType }) => {
 
     return (
         <div className={`flex flex-col items-center p-8 ${bgColor} space-y-6 rounded h-[310px] w-[300px]`}>
-            <h2 className="text-xl tracking-wide">{conversionType.charAt(0).toUpperCase() + conversionType.slice(1)} Converter</h2>
+            <h2 className="text-xl tracking-wide">{converterType.charAt(0).toUpperCase() + converterType.slice(1)} Converter</h2>
             <div className="flex flex-col items-center space-y-8">
                 <div className="flex items-center space-x-2">
                     <input
@@ -60,7 +60,7 @@ const Converter = ({ conversionType }) => {
                         onChange={(e) => setUnitFrom(e.target.value)}
                         className="p-2 rounded-lg bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
                     >
-                        {Object.keys(conversionData[conversionType].units).map((unit) => (
+                        {Object.keys(conversionData[converterType].units).map((unit) => (
                             <option key={unit} value={unit}>
                                 {unit.charAt(0).toUpperCase() + unit.slice(1)}
                             </option>
@@ -79,7 +79,7 @@ const Converter = ({ conversionType }) => {
                         onChange={(e) => setUnitTo(e.target.value)}
                         className="flex-1 ml-2 p-2 rounded-lg bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
                     >
-                        {Object.keys(conversionData[conversionType].units).map((unit) => (
+                        {Object.keys(conversionData[converterType].units).map((unit) => (
                             <option key={unit} value={unit}>
                                 {unit.charAt(0).toUpperCase() + unit.slice(1)}
                             </option>
