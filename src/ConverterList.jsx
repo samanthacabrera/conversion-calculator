@@ -4,7 +4,6 @@ import Converter from './Converter';
 const converterData = {
     'All Calculators': [],
     'Common Calculators': [],
-    'Financial Calculators': [],
     'All Converters': [],
     'Common Converters': [
         { value: 'length', label: 'Length' },
@@ -13,17 +12,14 @@ const converterData = {
         { value: 'weight', label: 'Weight' },
         { value: 'time', label: 'Time' },
     ],
-    'Financial Converters': [],
 };
 
 converterData['All Calculators'] = [
     ...converterData['Common Calculators'],
-    ...converterData['Financial Calculators'],
 ];
 
 converterData['All Converters'] = [
     ...converterData['Common Converters'],
-    ...converterData['Financial Converters'],
 ];
 
 const ConverterList = ({ selectedCategory }) => {
@@ -40,9 +36,9 @@ const ConverterList = ({ selectedCategory }) => {
                 ))}
             </div>
             {/* Desktop view */}
-            <div className="hidden overflow-hidden lg:flex lg:justify-start lg:items-center lg:w-full lg:p-12 lg:mt-6 lg:overflow-x-scroll lg:scroll-smooth space-x-24">
+            <div className="hidden lg:grid lg:grid-cols-3 lg:gap-8 lg:p-12 lg:mt-6 lg:rounded lg:bg-sky-100 lg:border-8 lg:border-blue-200 lg:shadow-sm">
                 {itemsToShow.map((item) => (
-                    <div key={item.value} className="w-full transition duration-300 hover:scale-110 hover:shadow-lg rounded-md">
+                    <div key={item.value} className="w-full border-2 border-white transition duration-300 hover:scale-110 hover:shadow-lg rounded-md">
                         <Converter converterType={item.value} />
                     </div>
                 ))}

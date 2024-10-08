@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const Nav = ({ onSelectCategory }) => {
-    const categories = ['All Calculators','Common Calculators', 'Financial Calculators','All Converters','Common Converters', 'Financial Converters'];
+    const categories = ['All Calculators','Common Calculators','All Converters','Common Converters'];
     const [selectedCategory, setSelectedCategory] = useState(categories[0]);
     const [isOpen, setIsOpen] = useState(false);
 
