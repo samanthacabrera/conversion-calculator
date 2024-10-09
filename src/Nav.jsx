@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const Nav = ({ onSelectCategory }) => {
-    const categories = ['All Calculators','Common Calculators','All Converters','Common Converters'];
+    const categories = ['All Calculators','Conversion Calculators', 'Volume Calculators'];
     const [selectedCategory, setSelectedCategory] = useState(categories[0]);
     const [isOpen, setIsOpen] = useState(false);
 
@@ -12,7 +12,7 @@ const Nav = ({ onSelectCategory }) => {
     };
 
     return (
-        <nav className="absolute top-0 left-0 p-4 w-full">
+        <nav className="flex justify-center w-full">
             {/* Desktop */}
             <div className="hidden lg:flex lg:flex-col">
                 <button
@@ -50,7 +50,7 @@ const Nav = ({ onSelectCategory }) => {
             </div>
 
             {/* Mobile */}
-            <div className="lg:hidden">
+            <div className="absolute top-0 left-0 lg:hidden">
                 {/* Toggle Button */}
                 <button
                     onClick={() => setIsOpen(!isOpen)}
@@ -76,7 +76,7 @@ const Nav = ({ onSelectCategory }) => {
 
                 {/* Dropdown */}
                 {isOpen && (
-                    <div className="fixed top-0 left-0 w-full h-full bg-orange-200 flex flex-col items-center justify-center z-10">
+                    <div className="fixed top-0 left-0 w-full h-full bg-sky-100 flex flex-col items-center justify-center z-10">
                         <div className="mb-12 text-center text-xl tracking-wider">
                             Select a category to get started 
                         </div>

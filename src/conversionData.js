@@ -18,7 +18,7 @@ export const conversionData = {
         convert: (value, from, to) => value * (conversionData.length.units[to] / conversionData.length.units[from]),
     },
     volume: {
-        units: {                    // US measurements for now
+        units: { // US measurements for now
             milliliters: 1000,
             fluidOunces: 33.814,
             tablespoons: 67.628,
@@ -79,9 +79,23 @@ export const conversionData = {
             months: 2.628e+6,  // Approximated as 30.44 days
             years: 3.154e+7,   // Approximated as 365.24 days
         },
-        convert: (value, from, to) => value * (conversionData.time.units[to] / conversionData.time.units[from]),
-        // convert: (value, from, to) => value * (conversionData.time.units[from] / conversionData.time.units[to]),
-    }
+        convert: (value, from, to) => value * (conversionData.time.units[from] / conversionData.time.units[to]),
+    },
+    sphereVolume: {
+        calculate: (radius) => (4 / 3) * Math.PI * Math.pow(radius, 3),
+    },
+    coneVolume: {
+        calculate: (radius, height) => (1 / 3) * Math.PI * Math.pow(radius, 2) * height,
+    },
+    cubeVolume: {
+        calculate: (side) => Math.pow(side, 3),
+    },
+    cylinderVolume: {
+        calculate: (radius, height) => Math.PI * Math.pow(radius, 2) * height,
+    },
+    rectangleVolume: {
+        calculate: (length, width, height) => length * width * height,
+    },
 };
 
 

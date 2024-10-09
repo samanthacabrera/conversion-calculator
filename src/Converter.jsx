@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { conversionData } from './conversionData';
 
-const Converter = ({ converterType }) => {
+const Converter = ({ calcType }) => {
+
     const [inputValue, setInputValue] = useState('');
-    const [unitFrom, setUnitFrom] = useState(Object.keys(conversionData[converterType].units)[0]);
-    const [unitTo, setUnitTo] = useState(Object.keys(conversionData[converterType].units)[1]);
+    const [unitFrom, setUnitFrom] = useState(Object.keys(conversionData[calcType].units)[0]);
+    const [unitTo, setUnitTo] = useState(Object.keys(conversionData[calcType].units)[1]);
     const [result, setResult] = useState(null);
 
     const bgColorMapping = {
@@ -15,13 +16,13 @@ const Converter = ({ converterType }) => {
         time: 'bg-yellow-200'
     };
 
-    const bgColor = bgColorMapping[converterType] || 'bg-white'; 
+    const bgColor = bgColorMapping[calcType] || 'bg-white'; 
 
     useEffect(() => {
-        setUnitFrom(Object.keys(conversionData[converterType].units)[0]);
-        setUnitTo(Object.keys(conversionData[converterType].units)[1]);
+        setUnitFrom(Object.keys(conversionData[calcType].units)[0]);
+        setUnitTo(Object.keys(conversionData[calcType].units)[1]);
         setResult(null);
-    }, [converterType]);
+    }, [calcType]);
 
     useEffect(() => {
         handleConvert(); 
@@ -33,7 +34,7 @@ const Converter = ({ converterType }) => {
             setResult(null); 
             return;
         }
-        const convertedValue = conversionData[converterType].convert(parsedValue, unitFrom, unitTo);
+        const convertedValue = conversionData[calcType].convert(parsedValue, unitFrom, unitTo);
         setResult(convertedValue);
     };
 
@@ -44,7 +45,7 @@ const Converter = ({ converterType }) => {
 
     return (
         <div className={`flex flex-col items-center p-8 ${bgColor} space-y-6 rounded h-[310px] w-[300px]`}>
-            <h2 className="text-xl tracking-wide">{converterType.charAt(0).toUpperCase() + converterType.slice(1)} Converter</h2>
+            <h2 className="text-xl tracking-wide">{calcType.charAt(0).toUpperCase() + calcType.slice(1)} Converter</h2>
             <div className="flex flex-col items-center space-y-8">
                 <div className="flex items-center space-x-2">
                     <input
@@ -60,7 +61,7 @@ const Converter = ({ converterType }) => {
                         onChange={(e) => setUnitFrom(e.target.value)}
                         className="p-2 rounded-lg bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
                     >
-                        {Object.keys(conversionData[converterType].units).map((unit) => (
+                        {Object.keys(conversionData[calcType].units).map((unit) => (
                             <option key={unit} value={unit}>
                                 {unit.charAt(0).toUpperCase() + unit.slice(1)}
                             </option>
@@ -79,7 +80,7 @@ const Converter = ({ converterType }) => {
                         onChange={(e) => setUnitTo(e.target.value)}
                         className="flex-1 ml-2 p-2 rounded-lg bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
                     >
-                        {Object.keys(conversionData[converterType].units).map((unit) => (
+                        {Object.keys(conversionData[calcType].units).map((unit) => (
                             <option key={unit} value={unit}>
                                 {unit.charAt(0).toUpperCase() + unit.slice(1)}
                             </option>
