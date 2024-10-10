@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { calcData } from './data';
 
-const Converter = ({ calcType }) => {
+const ConversionCalc = ({ calcType }) => {
 
     const [inputValue, setInputValue] = useState('');
     const [unitFrom, setUnitFrom] = useState(Object.keys(calcData[calcType].units)[0]);
@@ -95,4 +95,4 @@ const Converter = ({ calcType }) => {
     );
 };
 
-export default Converter;
+export default ConversionCalc;

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Nav = ({ onSelectCategory }) => {
-    const categories = ['All Calculators','Conversion Calculators', 'Volume Calculators'];
+    const categories = ['All Calculators', 'Area Calculators', 'Conversion Calculators', 'Volume Calculators'];
     const [selectedCategory, setSelectedCategory] = useState(categories[0]);
     const [isOpen, setIsOpen] = useState(false);
     const navigate = useNavigate();

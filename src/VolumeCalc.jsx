@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
 import { calcData } from './data';
 
-const VolumeCalculator = ({ calcType }) => {
+const VolumeCalc = ({ calcType }) => {
     const shapeDimensions = {
         sphereVolume: ['Radius'],
         coneVolume: ['Radius', 'Height'],
@@ -78,4 +78,4 @@ const VolumeCalculator = ({ calcType }) => {
     );
 };
 
-export default VolumeCalculator;
+export default VolumeCalc;

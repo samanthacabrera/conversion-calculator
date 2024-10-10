@@ -1,8 +1,9 @@
 import React, {useState}  from 'react';
 import { calcData } from './data';
 import { calculatorRoutes } from './routes'; 
-import Converter from './Converter'; 
-import VolumeCalculator from './VolumeCalculator'; 
+import ConversionCalc from './ConversionCalc'; 
+import VolumeCalc from './VolumeCalc'; 
+import AreaCalc from './AreaCalc';
 
 const Page = ({ calcType }) => {
     const [copySuccess, setCopySuccess] = useState('');
@@ -11,10 +12,12 @@ const Page = ({ calcType }) => {
     const renderCalculator = () => {
         if (route) {
             switch (route.component) {
-                case 'Converter':
-                    return <Converter calcType={calcType} />; 
-                case 'VolumeCalculator':
-                    return <VolumeCalculator calcType={calcType} />;
+                case 'ConversionCalc':
+                    return <ConversionCalc calcType={calcType} />; 
+                case 'VolumeCalc':
+                    return <VolumeCalc calcType={calcType} />;
+                case 'AreaCalc':
+                    return <AreaCalc calcType={calcType} />;
                 default:
                     return <p>Calculator component not found.</p>;
             }
@@ -23,13 +26,17 @@ const Page = ({ calcType }) => {
         }
     };
 
-    const title = route && route.component === 'VolumeCalculator' 
-        ? `Volume of a ${calcType.replace('Volume', '').charAt(0) + calcType.replace('Volume', '').slice(1)}`
-        : calcType;
+    const title = route && route.component === 'VolumeCalc' 
+    ? `Volume of a ${calcType.replace('Volume', '').charAt(0).toUpperCase() + calcType.replace('Volume', '').slice(1)}`
+    : route && route.component === 'AreaCalc' 
+    ? `Area of a ${calcType.replace('Area', '').charAt(0).toUpperCase() + calcType.replace('Area', '').slice(1)}`
+    : `Converting ${calcType.charAt(0).toUpperCase() + calcType.slice(1)}`;
+
 
     const formula = calcData[calcType]?.formula;
-    const steps = calcData[calcType]?.steps || [];
-    const introduction = calcData[calcType]?.desc;
+    const steps = calcData[calcType]?.steps;
+    const intro = calcData[calcType]?.desc;
+    const chart = calcData[calcType]?.chart;
 
      const copyToClipboard = () => {
         navigator.clipboard.writeText(formula).then(() => {
@@ -41,18 +48,20 @@ const Page = ({ calcType }) => {
     };
 
     return (
-        <div className="flex flex-col items-center md:flex-row">
-            <div className="md:w-1/2 m-12 space-y-8">
+        <div className="flex flex-col items-center md:flex-row p-2 md:p-12">
+            <div className="order-2 md:order-1 md:w-1/2 m-12 space-y-8">
                 <h2 className="text-2xl md:text-4xl font-bold">{title}</h2>
 
+                {intro && (
                 <section className="space-y-4">
                     <h3 className="text-xl font-semibold">Introduction</h3>
-                    <p>{introduction}</p>
+                    <p>{intro}</p>
                 </section>
+                )}
 
+                {formula && (
                 <section className="space-y-4">
                     <h3 className="text-xl font-semibold">Formula</h3>
-                    {formula && (
                         <div className="flex items-center space-x-4">
                             <p className="text-lg tracking-wider bg-gray-200 py-4 px-6 w-fit rounded">{formula}</p>
                             <button 
@@ -66,10 +75,10 @@ const Page = ({ calcType }) => {
                             </button>
                             {copySuccess && <p className="text-gray-400">{copySuccess}</p>}
                         </div>
-                    )}
                 </section>
-
-
+                )}
+                
+                {steps && (
                 <section className="space-y-4">
                     <h3 className="text-xl font-semibold">Step-By-Step</h3>
                     <ol className="list-decimal list-inside space-y-8">
@@ -78,9 +87,34 @@ const Page = ({ calcType }) => {
                         ))}
                     </ol>
                 </section>
+                )}
+
+                {chart && (
+                    <section className="space-y-4">
+                        <h3 className="text-xl font-semibold">Conversion Chart</h3>
+                        <table className="min-w-full border border-gray-300">
+                            <thead>
+                                <tr className="bg-gray-200">
+                                    {chart[0].map((header, index) => (
+                                        <th key={index} className="border border-gray-300 px-4 py-2">{header}</th>
+                                    ))}
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {chart.slice(1).map((row, rowIndex) => (
+                                    <tr key={rowIndex} className={rowIndex % 2 === 0 ? "bg-white" : "bg-gray-100"}>
+                                        {row.map((cell, cellIndex) => (
+                                            <td key={cellIndex} className="border border-gray-300 px-4 py-2">{cell}</td>
+                                        ))}
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </section>
+                )}
             </div>
         
-            <div className="md:w-1/2 m-12 self-start">
+            <div className="flex justify-center order-1 md:order-2 md:w-1/2 md:self-start m-12">
                 {renderCalculator()}
             </div>
         </div>

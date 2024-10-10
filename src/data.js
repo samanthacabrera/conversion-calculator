@@ -1,5 +1,21 @@
 export const calcData = {
     length: {
+        desc: "Length is a measure of distance. Converting between different units of length is essential in various fields such as science, engineering, and daily life. This calculator allows conversions between metric units (e.g., meters, centimeters) and imperial units (e.g., miles, inches).",
+        formula: "value * (conversion factor from unit A to unit B)",
+        chart: [
+            ["Unit", "Conversion Factor to meters (m)"],
+            ["Nanometers", "1e9"],
+            ["Micrometers", "1e6"],
+            ["Millimeters", "1000"],
+            ["Centimeters", "100"],
+            ["Decimeters", "10"],
+            ["Meters", "1"],
+            ["Kilometers", "0.001"],
+            ["Miles", "0.000621371"],
+            ["Yards", "1.09361"],
+            ["Feet", "3.28084"],
+            ["Inches", "39.3701"]
+        ],
         units: {
             nanometers: 1e9,
             micrometers: 1e6,
@@ -18,6 +34,20 @@ export const calcData = {
         convert: (value, from, to) => value * (calcData.length.units[to] / calcData.length.units[from]),
     },
     volume: {
+        desc: "Volume is the amount of space that a substance or object occupies. Converting between different volume units, such as liters, gallons, and milliliters, is crucial in cooking and scientific calculations.",
+        formula: "value * (conversion factor from unit A to unit B)",
+        chart: [
+            ["Unit", "Conversion Factor to Liters"],
+            ["Milliliters", "1000"],
+            ["Fluid Ounces", "33.814"],
+            ["Tablespoons", "67.628"],
+            ["Teaspoons", "202.884"],
+            ["Cups", "4.22675"],
+            ["Pints", "2.11338"],
+            ["Quarts", "1.05669"],
+            ["Gallons", "0.264172"],
+            ["Liters", "1"]
+        ],
         units: { // US measurements for now
             milliliters: 1000,
             fluidOunces: 33.814,
@@ -32,6 +62,17 @@ export const calcData = {
         convert: (value, from, to) => value * (calcData.volume.units[to] / calcData.volume.units[from]),
     },
     temperature: {
+        desc: "Temperature is a measure of the hotness or coldness of an object or environment. Conversions between Celsius, Fahrenheit, and Kelvin are important in science, weather, and daily life.",
+        formula: "value * (conversion factor from unit A to unit B)",
+        chart: [
+            ["Unit", "Conversion Formula"],
+            ["Celsius to Fahrenheit", "(°C × 9/5) + 32"],
+            ["Celsius to Kelvin", "°C + 273.15"],
+            ["Fahrenheit to Celsius", "(°F - 32) × 5/9"],
+            ["Fahrenheit to Kelvin", "(°F - 32) × 5/9 + 273.15"],
+            ["Kelvin to Celsius", "K - 273.15"],
+            ["Kelvin to Fahrenheit", "(K - 273.15) × 9/5 + 32"]
+        ],
         units: {
             celsius: 1,
             fahrenheit: 2,
@@ -56,6 +97,17 @@ export const calcData = {
         }
     },
     weight: {
+        desc: "Weight measures the mass of an object. Converting between different units of weight (e.g., grams, pounds, kilograms) is common in industries like food, manufacturing, and science.",
+        formula: "value * (conversion factor from unit A to unit B)",
+        chart: [
+            ["Unit", "Conversion Factor to Kilograms"],
+            ["Milligrams", "1e6"],
+            ["Grams", "1000"],
+            ["Kilograms", "1"],
+            ["Ounces", "35.274"],
+            ["Pounds", "2.20462"],
+            ["Metric Tons", "0.001"]
+        ],
         units: {
             milligrams: 1e6,
             grams: 1000,
@@ -67,6 +119,21 @@ export const calcData = {
         convert: (value, from, to) => value * (calcData.weight.units[to] / calcData.weight.units[from]),
     },
     time: {
+        desc: "Time is a measure of the ongoing progression of events. Converting between units of time, such as seconds, minutes, and hours, is essential in scheduling, science, and other time-sensitive fields.",
+        formula: "value * (conversion factor from unit A to unit B)",
+        chart: [
+            ["Unit", "Conversion Factor to Seconds"],
+            ["Nanoseconds", "1e-9"],
+            ["Microseconds", "1e-6"],
+            ["Milliseconds", "0.001"],
+            ["Seconds", "1"],
+            ["Minutes", "60"],
+            ["Hours", "3600"],
+            ["Days", "86400"],
+            ["Weeks", "604800"],
+            ["Months (approx.)", "2.628e6"],
+            ["Years (approx.)", "3.154e7"]
+        ],
         units: {
             nanoseconds: 1e-9,
             microseconds: 1e-6,
@@ -154,6 +221,62 @@ export const calcData = {
             "Substitute this result back into the formula. This is the volume (V).",
         ],
         desc: "Volume quantifies the amount of space a three-dimensional object occupies. A rectangular prism has six rectangular faces, and its volume calculation is crucial for various applications, including packaging, shipping, and architecture. Knowing how to calculate the volume of a rectangular prism helps determine how much space is available for contents and how to optimize storage."
+    },
+    rectangleArea: {
+        calculate: (length, width) => length * width,
+        formula: "A = l × w",
+        steps: [
+            "Measure the length (l) and width (w) of the rectangle.",
+            "Write down the formula: A = l × w.",
+            "Multiply the length by the width to get the area (A).",
+        ],
+        desc: "Area measures the amount of space inside a two-dimensional shape. The area of a rectangle is calculated by multiplying its length and width."
+    },
+    triangleArea: {
+        calculate: (base, height) => 0.5 * base * height,
+        formula: "A = 0.5 × b × h",
+        steps: [
+            "Measure the base (b) and height (h) of the triangle.",
+            "Write down the formula: A = 0.5 × b × h.",
+            "Multiply the base by the height.",
+            "Divide the result by 2 to get the area (A).",
+        ],
+        desc: "The area of a triangle is calculated using the base and height. This calculation is useful in various applications, including architecture and design."
+    },
+    trapezoidArea: {
+        calculate: (base1, base2, height) => 0.5 * (base1 + base2) * height,
+        formula: "A = 0.5 × (b1 + b2) × h",
+        steps: [
+            "Measure the lengths of the two bases (b1 and b2) and the height (h) of the trapezoid.",
+            "Write down the formula: A = 0.5 × (b1 + b2) × h.",
+            "Add the lengths of the two bases.",
+            "Multiply the result by the height.",
+            "Divide the result by 2 to get the area (A).",
+        ],
+        desc: "The area of a trapezoid is calculated using the lengths of its two bases and its height. This calculation is important in various fields, including geometry and architecture."
+    },
+    circleArea: {
+        calculate: (radius) => Math.PI * Math.pow(radius, 2),
+        formula: "A = π × r²",
+        steps: [
+            "Measure the radius (r) of the circle.",
+            "Write down the formula: A = π × r².",
+            "Square the radius (multiply r by itself).",
+            "Multiply the result by π (approximately 3.14) to get the area (A).",
+        ],
+        desc: "The area of a circle is determined by its radius. This calculation is used in various applications, such as determining the size of circular spaces."
+    },
+    sectorArea: {
+        calculate: (radius, angle) => 0.5 * radius * radius * (angle * Math.PI / 180),
+        formula: "A = 0.5 × r² × (θ in radians)",
+        steps: [
+            "Measure the radius (r) and the angle (θ) of the sector.",
+            "Convert the angle from degrees to radians: θ (radians) = θ (degrees) × (π / 180).",
+            "Write down the formula: A = 0.5 × r² × (θ in radians).",
+            "Square the radius (multiply r by itself).",
+            "Multiply this result by 0.5 and by the angle in radians to get the area (A).",
+        ],
+        desc: "The area of a sector is the area of a 'slice' of a circle, defined by a central angle. Understanding how to calculate this area is useful in various applications."
     },
 };
 

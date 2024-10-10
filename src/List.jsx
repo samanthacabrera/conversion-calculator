@@ -1,6 +1,7 @@
 import React from 'react';
-import Converter from './Converter';
-import VolumeCalculator from './VolumeCalculator';
+import ConversionCalc from './ConversionCalc';
+import VolumeCalc from './VolumeCalc';
+import AreaCalc from './AreaCalc';
 
 const converterData = {
     'All Calculators': [],
@@ -18,24 +19,37 @@ const converterData = {
         { value: 'cylinderVolume', label: 'Volume of a Cylinder' },
         { value: 'rectangleVolume', label: 'Volume of a Rectangle' },
     ],
+     'Area Calculators': [ 
+        { value: 'rectangleArea', label: 'Area of a Rectangle' },
+        { value: 'triangleArea', label: 'Area of a Triangle' },
+        { value: 'trapezoidArea', label: 'Area of a Trapezoid' },
+        { value: 'circleArea', label: 'Area of a Circle' },
+        { value: 'sectorArea', label: 'Area of a Sector' },
+    ],
 };
 
 converterData['All Calculators'] = [
+    ...converterData['Area Calculators'],
     ...converterData['Conversion Calculators'],
     ...converterData['Volume Calculators'],
 ];
 
 const componentMapping = {
-    'length': Converter,
-    'temperature': Converter,
-    'volume': Converter,
-    'weight': Converter,
-    'time': Converter,
-    'sphereVolume': VolumeCalculator,
-    'coneVolume': VolumeCalculator,
-    'cubeVolume': VolumeCalculator,
-    'cylinderVolume': VolumeCalculator,
-    'rectangleVolume': VolumeCalculator,
+    'length': ConversionCalc,
+    'temperature': ConversionCalc,
+    'volume': ConversionCalc,
+    'weight': ConversionCalc,
+    'time': ConversionCalc,
+    'sphereVolume': VolumeCalc,
+    'coneVolume': VolumeCalc,
+    'cubeVolume': VolumeCalc,
+    'cylinderVolume': VolumeCalc,
+    'rectangleVolume': VolumeCalc,
+    'rectangleArea': AreaCalc, 
+    'triangleArea': AreaCalc,
+    'trapezoidArea': AreaCalc,
+    'circleArea': AreaCalc,
+    'sectorArea': AreaCalc,
 };
 
 const List = ({ selectedCategory }) => {
