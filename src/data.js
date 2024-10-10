@@ -1,4 +1,4 @@
-export const conversionData = {
+export const calcData = {
     length: {
         units: {
             nanometers: 1e9,
@@ -15,7 +15,7 @@ export const conversionData = {
             feet: 3.28084,
             inches: 39.3701,
         },
-        convert: (value, from, to) => value * (conversionData.length.units[to] / conversionData.length.units[from]),
+        convert: (value, from, to) => value * (calcData.length.units[to] / calcData.length.units[from]),
     },
     volume: {
         units: { // US measurements for now
@@ -29,7 +29,7 @@ export const conversionData = {
             gallons: 0.264172,
             liters: 1,
         },
-        convert: (value, from, to) => value * (conversionData.volume.units[to] / conversionData.volume.units[from]),
+        convert: (value, from, to) => value * (calcData.volume.units[to] / calcData.volume.units[from]),
     },
     temperature: {
         units: {
@@ -64,7 +64,7 @@ export const conversionData = {
             pounds: 2.20462,
             metricTons: 0.001,
         },
-        convert: (value, from, to) => value * (conversionData.weight.units[to] / conversionData.weight.units[from]),
+        convert: (value, from, to) => value * (calcData.weight.units[to] / calcData.weight.units[from]),
     },
     time: {
         units: {
@@ -79,22 +79,27 @@ export const conversionData = {
             months: 2.628e+6,  // Approximated as 30.44 days
             years: 3.154e+7,   // Approximated as 365.24 days
         },
-        convert: (value, from, to) => value * (conversionData.time.units[from] / conversionData.time.units[to]),
+        convert: (value, from, to) => value * (calcData.time.units[from] / calcData.time.units[to]),
     },
     sphereVolume: {
         calculate: (radius) => (4 / 3) * Math.PI * Math.pow(radius, 3),
+        formula: "V = 4/3 × π × r³",
     },
     coneVolume: {
         calculate: (radius, height) => (1 / 3) * Math.PI * Math.pow(radius, 2) * height,
+        formula: "V = 1/3 × π × r² × h",
     },
     cubeVolume: {
         calculate: (side) => Math.pow(side, 3),
+        formula: "V = s³",
     },
     cylinderVolume: {
         calculate: (radius, height) => Math.PI * Math.pow(radius, 2) * height,
+        formula: "V = π × r² × h",
     },
     rectangleVolume: {
         calculate: (length, width, height) => length * width * height,
+        formula: "V = l × w × h",
     },
 };
 

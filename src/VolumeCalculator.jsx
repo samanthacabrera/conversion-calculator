@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { conversionData } from './conversionData';
+import { Link } from 'react-router-dom'
+import { calcData } from './data';
 
 const VolumeCalculator = ({ calcType }) => {
     const shapeDimensions = {
@@ -34,7 +35,7 @@ const VolumeCalculator = ({ calcType }) => {
         const numericValues = updatedValues.map((val) => val === '' ? 0 : Number(val));
 
         if (numericValues.every((val) => !isNaN(val) && val >= 0)) {
-            const volume = conversionData[calcType]?.calculate(...numericValues);
+            const volume = calcData[calcType]?.calculate(...numericValues);
             if (typeof volume === 'number') {
                 setResult(volume);
             } else {
@@ -47,9 +48,9 @@ const VolumeCalculator = ({ calcType }) => {
 
     return (
         <div className={`flex flex-col items-center text-center p-8 space-y-4 ${bgColorMapping[calcType]} rounded h-[310px] w-[300px]`}>
-            <h2 className="text-xl tracking-wide">
-                {`Volume of a ${calcType.replace('Volume', '').charAt(0).toUpperCase() + calcType.replace('Volume', '').slice(1)} Calculator`}
-            </h2>
+            <Link to={`/calculator/${calcType}`} className="text-xl tracking-wide hover:underline">
+                {`Volume of a ${calcType.replace('Volume', '').charAt(0).toUpperCase() + calcType.replace('Volume', '').slice(1)}`}
+            </Link>
 
             <div className="flex flex-grow flex-col justify-center items-center space-y-4"> 
                 {dimensions.map((dim, index) => (

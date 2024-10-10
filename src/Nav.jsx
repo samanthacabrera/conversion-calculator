@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Nav = ({ onSelectCategory }) => {
     const categories = ['All Calculators','Conversion Calculators', 'Volume Calculators'];
     const [selectedCategory, setSelectedCategory] = useState(categories[0]);
     const [isOpen, setIsOpen] = useState(false);
+    const navigate = useNavigate();
 
     const handleCategoryClick = (category) => {
         setSelectedCategory(category);
         onSelectCategory(category);
+        navigate('/');
         setIsOpen(false);
     };
 
@@ -40,7 +43,7 @@ const Nav = ({ onSelectCategory }) => {
                             <button
                                 key={category}
                                 onClick={() => handleCategoryClick(category)}
-                                className="block hover:underline transition duration-300 pl-10 py-2 text-left w-full"
+                                className="block hover:underline transition duration-300 pl-10 py-2 text-left tracking-wide w-full"
                             >
                                 {category}
                             </button>
