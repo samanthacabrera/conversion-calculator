@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useState}  from 'react';
 import { calcData } from './data';
 import { calculatorRoutes } from './routes'; 
 import Converter from './Converter'; 
 import VolumeCalculator from './VolumeCalculator'; 
 
 const Page = ({ calcType }) => {
+    const [copySuccess, setCopySuccess] = useState('');
     const route = calculatorRoutes.find(route => route.calcType === calcType);
 
     const renderCalculator = () => {
@@ -15,31 +16,72 @@ const Page = ({ calcType }) => {
                 case 'VolumeCalculator':
                     return <VolumeCalculator calcType={calcType} />;
                 default:
-                    return <p className="text-red-500">Calculator component not found.</p>;
+                    return <p>Calculator component not found.</p>;
             }
         } else {
-            return <p className="text-red-500">Calculator type not found.</p>;
+            return <p>Calculator type not found.</p>;
         }
     };
 
     const title = route && route.component === 'VolumeCalculator' 
-        ? `volume of a ${calcType.replace('Volume', '').charAt(0) + calcType.replace('Volume', '').slice(1)}`
+        ? `Volume of a ${calcType.replace('Volume', '').charAt(0) + calcType.replace('Volume', '').slice(1)}`
         : calcType;
-    
+
     const formula = calcData[calcType]?.formula;
+    const steps = calcData[calcType]?.steps || [];
+    const introduction = calcData[calcType]?.desc;
+
+     const copyToClipboard = () => {
+        navigator.clipboard.writeText(formula).then(() => {
+            setCopySuccess('copied to clipboard :)');
+            setTimeout(() => setCopySuccess(''), 2000); 
+        }).catch(err => {
+            setCopySuccess('Failed to copy formula');
+        });
+    };
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen py-12">
-            <div className="flex flex-col items-center justify-center text-center bg-white shadow-lg rounded-lg m-2 p-6 lg:p-12 space-y-12">
-                
-                <h2 className="text-2xl lg:text-4xl tracking-wide mt-6">How do I calculate {title}?</h2>
+        <div className="flex flex-col items-center md:flex-row">
+            <div className="md:w-1/2 m-12 space-y-8">
+                <h2 className="text-2xl md:text-4xl font-bold">{title}</h2>
 
-                <div>{renderCalculator()}</div>
-                
-                <h3 className="text-xl tracking-wide font-semibold">Formula</h3>
-                {formula && <p className="text-xl text-gray-600 mb-6">{formula}</p>} 
-                
-                
+                <section className="space-y-4">
+                    <h3 className="text-xl font-semibold">Introduction</h3>
+                    <p>{introduction}</p>
+                </section>
+
+                <section className="space-y-4">
+                    <h3 className="text-xl font-semibold">Formula</h3>
+                    {formula && (
+                        <div className="flex items-center space-x-4">
+                            <p className="text-lg tracking-wider bg-gray-200 py-4 px-6 w-fit rounded">{formula}</p>
+                            <button 
+                                className="text-gray-400 hover:text-gray-800 hover:scale-105 transition-all duration-200"
+                                onClick={copyToClipboard}
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-8 h-8">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V5a2 2 0 012-2h6a2 2 0 012 2v6a2 2 0 01-2 2h-2m-4 4H5a2 2 0 01-2-2v-6a2 2 0 012-2h6a2 2 0 012 2v6a2 2 0 01-2 2z" />
+                                </svg>
+
+                            </button>
+                            {copySuccess && <p className="text-gray-400">{copySuccess}</p>}
+                        </div>
+                    )}
+                </section>
+
+
+                <section className="space-y-4">
+                    <h3 className="text-xl font-semibold">Step-By-Step</h3>
+                    <ol className="list-decimal list-inside space-y-8">
+                        {steps.map((step, index) => (
+                            <li key={index} >{step}</li>
+                        ))}
+                    </ol>
+                </section>
+            </div>
+        
+            <div className="md:w-1/2 m-12 self-start">
+                {renderCalculator()}
             </div>
         </div>
     );
