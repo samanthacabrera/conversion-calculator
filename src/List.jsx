@@ -59,7 +59,6 @@ const List = ({ selectedCategory }) => {
         <div className="relative w-full flex flex-col items-center">
             {/* Mobile view */}
             <div className="flex flex-col items-center mt-2 space-y-12 lg:hidden">
-                <h2 className="tracking-wider">{selectedCategory}</h2>
                  {itemsToShow.map((item) => {
                     const Component = componentMapping[item.value];
                     return (
