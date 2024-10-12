@@ -49,7 +49,7 @@ const Page = ({ calcType }) => {
 
     return (
         <div className="flex flex-col items-center md:flex-row p-2 md:p-12">
-            <div className="order-2 md:order-1 md:w-1/2 m-12 space-y-8">
+            <div className="order-2 md:order-1 md:w-1/2 m-12 space-y-8 bg-white rounded p-8 md:py-12 md:pr-12">
                 <h2 className="text-2xl md:text-4xl font-bold">{title}</h2>
 
                 {intro && (

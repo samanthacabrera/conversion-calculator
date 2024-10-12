@@ -5,6 +5,7 @@ import Header from './Header';
 import Nav from './Nav';
 import List from './List';
 import Page from './Page';
+import Glossary from './Glossary';
 import Footer from './Footer';
 
 const App = () => {
@@ -17,7 +18,7 @@ const App = () => {
         <Header />
 
         <Nav onSelectCategory={setSelectedCategory}/>
-  
+
         <Routes>
           <Route path="/" element={<List selectedCategory={selectedCategory} />} />
           {calculatorRoutes.map(({ path, component, calcType }) => (
@@ -28,7 +29,7 @@ const App = () => {
               />
           ))}
         </Routes>
-
+        
         <Footer />
         
       </div>
