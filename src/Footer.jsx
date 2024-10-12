@@ -7,7 +7,7 @@ const Footer = () => {
          Each calculator has been individually developed and thoroughly tested. If you spot any errors, let us know—your feedback is invaluable in helping improve the site.
       </p> */}
       
-      <a href="https://github.com/samanthacabrera" target="_blank" rel="noopener noreferrer" className="relative bottom-0 opacity-20 mt-8">
+      <a href="https://github.com/samanthacabrera" target="_blank" rel="noopener noreferrer" className="relative bottom-0 opacity-20 my-1">
         made by <span className="hover:underline hover:italic">sam cabrera</span>
       </a>
       </>

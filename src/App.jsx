@@ -20,7 +20,12 @@ const App = () => {
         <Nav onSelectCategory={setSelectedCategory}/>
 
         <Routes>
-          <Route path="/" element={<List selectedCategory={selectedCategory} />} />
+          <Route path="/" element={
+            <>
+              <List selectedCategory={selectedCategory} />
+              <Glossary/>
+            </>
+            } />
           {calculatorRoutes.map(({ path, component, calcType }) => (
               <Route
                   key={path}
