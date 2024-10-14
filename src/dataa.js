@@ -1,5 +1,5 @@
 export const calcData = {
-    'Conversion Calculators': {
+    ConversionCalculators: {
         convertLength: {
             calcType: "convertLength",
             label: "Length Unit Converter",
@@ -85,7 +85,7 @@ export const calcData = {
             },
             steps: [],
             dimensions: [],
-            units: [], // No units for temperature conversion
+            units: [],
         },
         convertTime: {
             calcType: "convertTime",
@@ -109,7 +109,7 @@ export const calcData = {
             ],
         },
     },
-    'Area Calculators': {
+    AreaCalculators: {
         areaRectangle: {
             calcType: "areaRectangle",
             label: "Area of a Retangle",
@@ -202,7 +202,7 @@ export const calcData = {
             units: {},
         },
     },
-    'Volume Calculators': {
+    VolumeCalculators: {
         volumeSphere: {
             calcType: "volumeSphere",
             label: "Volume of a Sphere",

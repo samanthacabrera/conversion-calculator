@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { calculatorRoutes } from './routes';
 import Menu from './Menu';
 import Header from './Header';
-import Nav from './Nav';
+import Filter from './Filter';
 import List from './List';
 import Page from './Page';
 import Footer from './Footer';
@@ -22,11 +22,11 @@ const App = () => {
         <Routes>
           <Route path="/" element={
             <>
-              <Nav onSelectCategory={setSelectedCategory}/>
+              <Filter onSelectCategory={setSelectedCategory}/>
               <List selectedCategory={selectedCategory} />
             </>
             } />
-          {calculatorRoutes.map(({ path, component, calcType }) => (
+          {calculatorRoutes.map(({ path, calcType }) => (
               <Route
                   key={path}
                   path={path}

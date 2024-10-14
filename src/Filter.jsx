@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const Nav = ({ onSelectCategory }) => {
+const Filter = ({ onSelectCategory }) => {
     const categories = [
-        { name: 'All Calculators', color: 'bg-lime-200' },
-        { name: 'Area Calculators', color: 'bg-blue-200' },
-        { name: 'Conversion Calculators', color: 'bg-orange-200' },
-        { name: 'Volume Calculators', color: 'bg-pink-200' },
+        { name: 'AllCalculators', color: 'bg-lime-200' },
+        { name: 'AreaCalculators', color: 'bg-blue-200' },
+        { name: 'ConversionCalculators', color: 'bg-orange-200' },
+        { name: 'VolumeCalculators', color: 'bg-pink-200' },
     ];
     
     const [selectedCategory, setSelectedCategory] = useState(categories[0].name);
@@ -18,8 +18,12 @@ const Nav = ({ onSelectCategory }) => {
         navigate('/');
     };
 
+    const formatCategoryName = (name) => {
+        return name.replace(/([a-z])([A-Z])/g, '$1 $2');
+    };
+
     return (
-        <nav className="flex justify-center w-full my-6">
+        <div className="flex justify-center w-full my-6">
             <div className="flex flex-col space-y-1 md:flex-row md:space-x-8">
                 {categories.map((category) => (
                     <button
@@ -27,12 +31,12 @@ const Nav = ({ onSelectCategory }) => {
                         onClick={() => handleCategoryClick(category)}
                         className={`transition-all duration-200 ${selectedCategory === category.name ? `${category.color} py-2 px-4 rounded` : 'hover:scale-105'}`}
                     >
-                        {category.name}
+                        {formatCategoryName(category.name)}
                     </button>
                 ))}
             </div>
-        </nav>
+        </div>
     );
 };
 
-export default Nav;
+export default Filter;

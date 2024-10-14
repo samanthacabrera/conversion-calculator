@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { calcData } from './data'; 
 import { Link } from 'react-router-dom'; 
-import { calculatorRoutes } from './routes'; 
+import { calcData } from './dataa'; 
 
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,7 +8,7 @@ const Menu = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-
+  
   const closeMenu = () => {
     setIsOpen(false);
   };
@@ -20,9 +19,7 @@ const Menu = () => {
         closeMenu();
       }
     };
-    
     document.addEventListener('mousedown', handleClickOutside);
-    
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
@@ -30,7 +27,6 @@ const Menu = () => {
 
   return (
     <div>
-      {/* Toggle */}
       <button 
         className="z-50 menu-button fixed top-5 left-4 w-4 h-4 transition-all duration-500 focus:outline-none" 
         onClick={toggleMenu}
@@ -50,7 +46,6 @@ const Menu = () => {
         )}
       </button>
 
-      {/* Overlay */}
       {isOpen && (
         <div 
           className="fixed inset-0 bg-black bg-opacity-30 z-10"
@@ -69,10 +64,10 @@ const Menu = () => {
           scrollbarWidth: 'none' 
         }}
       >
-        <div className="flex flex-col space-y-2 my-16 pl-12 pr-8 space-y-6">
-          <h2 className="text-2xl tracking-wider">Quick Links</h2>
+        <div className="flex flex-col space-y-2 my-16 pl-12 pr-8 space-y-4">
+          <h2 className="text-2xl tracking-wide">Quick Links</h2>
           <ul className="mb-1">
-            <li className="hover:underline hover:scale-105 transition-all duration-200">
+            <li className="hover:underline">
               <Link 
                 to='/'
                 onClick={() => {
@@ -85,45 +80,34 @@ const Menu = () => {
             </li>
           </ul>
 
-          <h2 className="text-2xl tracking-wider">All Calculators</h2>
-          <ul className="space-y-4">
-            {Object.keys(calcData).map((calcKey) => {
-              const route = calculatorRoutes.find(route => route.calcType === calcKey);
-              
-              const title = route 
-                ? route.component === 'VolumeCalc' 
-                  ? `Volume of a ${calcKey.replace('Volume', '').charAt(0).toUpperCase() + calcKey.replace('Volume', '').slice(1)} Calculator`
-                  : route.component === 'AreaCalc' 
-                    ? `Area of a ${calcKey.replace('Area', '').charAt(0).toUpperCase() + calcKey.replace('Area', '').slice(1)} Calculator`
-                    : `Converting Units of ${calcKey.charAt(0).toUpperCase() + calcKey.slice(1)} Calculator`
-                : 'Calculator'; 
-
-              return (
-                route && (
-                  <li key={calcKey} className="hover:underline hover:scale-105 transition-all duration-200">
-                    <Link 
-                      to={route.path} 
-                      onClick={() => {
-                        window.scrollTo(0, 0);
-                        closeMenu(); 
-                      }}
-                    >
-                      {title}
-                    </Link>
-                  </li>
-                )
-              );
-            })}
-          </ul>
+          <h2 className="text-2xl tracking-wide">All Calculators</h2>
+          {Object.entries(calcData).map(([category, calculators]) => (
+                <div key={category}>
+                    <h3 className="font-semibold tracking-wide mb-2">{category}</h3>
+                    <ul className="space-y-2">
+                        {Object.entries(calculators).map(([key, calculator]) => (
+                            <li key={key} className="hover:underline">
+                               <Link 
+                                to={`calculator/${calculator.calcType}`}
+                                onClick={() => {
+                                  window.scrollTo(0, 0);
+                                  closeMenu(); 
+                                }}
+                              >
+                                {calculator.label}
+                              </Link>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            ))}
         </div>
       </div>
 
-      {/* Custom Scrollbar CSS */}
-      <style jsx>{`
+      <style>{`
         .menu-content {
           scrollbar-width: none; /* Firefox */
         }
-
         .menu-content::-webkit-scrollbar {
           display: none; /* Chrome, Safari, and Edge */
         }
