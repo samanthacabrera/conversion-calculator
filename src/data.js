@@ -21,7 +21,7 @@ export const calcData = {
         areaTriangle: {
             calcType: "areaTriangle",
             label: "Area of a Triangle",
-            color: "yellow",
+            color: "orange",
             desc: "The area of a triangle is calculated using the base and height. This calculation is useful in various applications, including architecture and design.",
             formula: "A = 0.5 × b × h",
             calculate: (base, height) => 0.5 * base * height,
@@ -79,7 +79,7 @@ export const calcData = {
         areaSector: {
             calcType: "areaSector",
             label: "Area of a Sector",
-            color: "indigo",
+            color: "purple",
             desc: "The area of a sector is the area of a 'slice' of a circle, defined by a central angle. Understanding how to calculate this area is useful in various applications.",
             formula: "A = 0.5 × r² × (θ in radians)",
             calculate: (radius, angle) => 0.5 * radius * radius * (angle * Math.PI / 180),
@@ -199,7 +199,7 @@ export const calcData = {
         volumeSphere: {
             calcType: "volumeSphere",
             label: "Volume of a Sphere",
-            color: "indigo",
+            color: "purple",
             desc: "Volume measures the amount of space a three-dimensional object occupies. A sphere is a perfectly round object, and understanding its volume helps in fields ranging from physics to everyday applications like sports.",
             formula: "V = 4/3 × π × r³",
             calculate: (radius) => (4 / 3) * Math.PI * Math.pow(radius, 3),
