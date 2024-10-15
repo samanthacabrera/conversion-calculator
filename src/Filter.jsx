@@ -4,9 +4,9 @@ import { useNavigate } from 'react-router-dom';
 const Filter = ({ onSelectCategory }) => {
     const categories = [
         { name: 'AllCalculators', color: 'bg-lime-200' },
-        { name: 'AreaCalculators', color: 'bg-blue-200' },
-        { name: 'ConversionCalculators', color: 'bg-orange-200' },
-        { name: 'VolumeCalculators', color: 'bg-pink-200' },
+        { name: 'AreaCalculators', color: 'bg-pink-200' },
+        { name: 'SurfaceAreaCalculators', color: 'bg-orange-200' },
+        { name: 'VolumeCalculators', color: 'bg-sky-200' },
     ];
     
     const [selectedCategory, setSelectedCategory] = useState(categories[0].name);

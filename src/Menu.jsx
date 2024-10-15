@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'; 
-import { calcData } from './dataa'; 
+import { calcData } from './data'; 
 
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -67,7 +67,7 @@ const Menu = () => {
         <div className="flex flex-col space-y-2 my-16 pl-12 pr-8 space-y-4">
           <h2 className="text-2xl tracking-wide">Quick Links</h2>
           <ul className="mb-1">
-            <li className="hover:underline">
+            <li className="hover:underline hover:scale-105 transition-all duration-100">
               <Link 
                 to='/'
                 onClick={() => {
@@ -83,10 +83,9 @@ const Menu = () => {
           <h2 className="text-2xl tracking-wide">All Calculators</h2>
           {Object.entries(calcData).map(([category, calculators]) => (
                 <div key={category}>
-                    <h3 className="font-semibold tracking-wide mb-2">{category}</h3>
                     <ul className="space-y-2">
                         {Object.entries(calculators).map(([key, calculator]) => (
-                            <li key={key} className="hover:underline">
+                            <li key={key} className="hover:underline hover:scale-105 transition-all duration-100">
                                <Link 
                                 to={`calculator/${calculator.calcType}`}
                                 onClick={() => {

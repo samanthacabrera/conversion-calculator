@@ -9,7 +9,7 @@ import Page from './Page';
 import Footer from './Footer';
 
 const App = () => {
-  const [selectedCategory, setSelectedCategory] = useState('All Calculators');
+  const [selectedCategory, setSelectedCategory] = useState('AllCalculators');
 
   return (
     <Router>
@@ -22,7 +22,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={
             <>
-              <Filter onSelectCategory={setSelectedCategory}/>
+              <Filter onSelectCategory={setSelectedCategory} />
               <List selectedCategory={selectedCategory} />
             </>
             } />
