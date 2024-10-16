@@ -96,12 +96,30 @@ export const calcData = {
             ],
             units: {},
         },
+        areaParallelogram: {
+            calcType: "areaParallelogram",
+            label: "Area of a Parallelogram",
+            color: "sky",
+            desc: "The area of a parallelogram is calculated by multiplying its base and height.",
+            formula: "A = b × h",
+            calculate: (base, height) => base * height,
+            steps: [
+                "Measure the base (b) and height (h) of the parallelogram.",
+                "Write down the formula: A = b × h.",
+                "Multiply the base by the height to get the area (A).",
+            ],
+            dimensions: [
+                "Base",
+                "Height"
+            ],
+            units: {},
+        },
     },
     SurfaceAreaCalculators: {
         surfaceAreaSphere: {
             calcType: "surfaceAreaSphere",
             label: "Surface Area of a Sphere",
-            color: "lime",
+            color: "pink",
             desc: "The surface area of a sphere is calculated based on its radius. ",
             formula: "A = 4 × π × r²",
             calculate: (radius) => 4 * Math.PI * Math.pow(radius, 2),
@@ -139,7 +157,7 @@ export const calcData = {
         surfaceAreaCube: {
             calcType: "surfaceAreaCube",
             label: "Surface Area of a Cube",
-            color: "pink",
+            color: "orange",
             desc: "The surface area of a cube is calculated based on the length of one side.",
             formula: "A = 6 × s²",
             calculate: (side) => 6 * Math.pow(side, 2),
@@ -157,7 +175,7 @@ export const calcData = {
         surfaceAreaCylinder: {
             calcType: "surfaceAreaCylinder",
             label: "Surface Area of a Cylinder",
-            color: "sky",
+            color: "orange",
             desc: "The surface area of a cylinder is calculated using the radius and height. It includes the areas of the two circular bases and the curved surface.",
             formula: "A = 2 × π × r × (r + h)",
             calculate: (radius, height) => 2 * Math.PI * radius * (radius + height),
@@ -177,7 +195,7 @@ export const calcData = {
         surfaceAreaRectangle: {
             calcType: "surfaceAreaRectangle",
             label: "Surface Area of a Rectangle",
-            color: "orange",
+            color: "sky",
             desc: "The surface area of a rectangular prism is calculated by summing the areas of all six rectangular faces.",
             formula: "A = 2 × (l × w + l × h + w × h)",
             calculate: (length, width, height) => 2 * (length * width + length * height + width * height),
@@ -191,6 +209,28 @@ export const calcData = {
                 "Length",
                 "Width",
                 "Height"
+            ],
+            units: {},
+        },
+        surfaceAreaEllipsoid: {
+            calcType: "surfaceAreaEllipsoid",
+            label: "Surface Area of an Ellipsoid",
+            color: "lime",
+            desc: "The surface area of an ellipsoid is calculated using the lengths of its axes.",
+            formula: "A ≈ 4π × \left( \frac{a^{p}b^{p}+b^{p}c^{p}+c^{p}a^{p}}{3} \right)^{\frac{1}{p}}",
+            calculate: (axis1, axis2, axis3) => {
+                const p = 1.6075; // Approximation constant
+                return 4 * Math.PI * Math.pow((Math.pow(axis1 * axis2, p) + Math.pow(axis2 * axis3, p) + Math.pow(axis3 * axis1, p)) / 3, 1 / p);
+            },
+            steps: [
+                "Measure the lengths of the three axes (a, b, c) of the ellipsoid.",
+                "Write down the formula: A ≈ 4π × \left( \frac{a^{p}b^{p}+b^{p}c^{p}+c^{p}a^{p}}{3} \right)^{\frac{1}{p}}.",
+                "Substitute the axis values to calculate the surface area (A).",
+            ],
+            dimensions: [
+                "Axis 1",
+                "Axis 2",
+                "Axis 3"
             ],
             units: {},
         },
@@ -306,6 +346,25 @@ export const calcData = {
                 "Length",
                 "Width",
                 "Heigth"
+            ],
+            units: {},
+        },
+        volumeSquarePyramid: {
+            calcType: "volumeSquarePyramid",
+            label: "Volume of a Square Pyramid",
+            color: "purple",
+            desc: "The volume of a square pyramid is calculated using its base area and height.",
+            formula: "V = \frac{1}{3} × A_{base} × h",
+            calculate: (baseLength, height) => (1 / 3) * Math.pow(baseLength, 2) * height,
+            steps: [
+                "Measure the length of the base (b) and the height (h) of the pyramid.",
+                "Write down the formula: V = (1/3) × A_{base} × h.",
+                "Calculate the base area (A_{base}) by squaring the base length.",
+                "Multiply the base area by the height and divide by 3 to get the volume (V).",
+            ],
+            dimensions: [
+                "Base Length",
+                "Height"
             ],
             units: {},
         },

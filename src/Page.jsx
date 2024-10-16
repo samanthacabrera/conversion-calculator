@@ -38,7 +38,7 @@ const Page = ({ calcType }) => {
     return (
         <div className="flex flex-col p-6 md:p-12">
         <div className="flex flex-col items-center md:flex-row">
-            <div className="order-2 md:order-1 md:w-1/2 m-12 space-y-8 bg-white rounded p-8 md:py-12 md:pr-12">
+            <div className="order-2 md:order-1 md:w-2/3 m-12 space-y-8 bg-white rounded p-8 md:py-12 md:pr-12">
                 <h2 className="text-3xl md:text-4xl tracking-wide">{title}</h2>
 
                 {intro && (
