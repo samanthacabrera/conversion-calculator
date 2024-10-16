@@ -12,6 +12,13 @@ const Page = ({ calcType }) => {
     const intro = calcData[category][route?.calcType]?.desc; 
     const formula = calcData[category][route?.calcType]?.formula; 
     const steps = calcData[category][route?.calcType]?.steps;
+    const glossary = Object.keys(calcData).flatMap(category => 
+        Object.entries(calcData[category]).map(([key, value]) => ({
+            calcType: key,
+            label: value.label,
+            path: calculatorRoutes.find(route => route.calcType === key)?.path || '#',
+        }))
+    );
 
 
     const copyToClipboard = () => {
@@ -24,20 +31,21 @@ const Page = ({ calcType }) => {
     };
 
     return (
-        <div className="flex flex-col items-center md:flex-row p-2 md:p-12">
+        <div className="flex flex-col p-6 md:p-12">
+        <div className="flex flex-col items-center md:flex-row">
             <div className="order-2 md:order-1 md:w-1/2 m-12 space-y-8 bg-white rounded p-8 md:py-12 md:pr-12">
-                <h2 className="text-2xl md:text-4xl font-bold">{title}</h2>
+                <h2 className="text-2xl md:text-4xl tracking-wide font-semibold">{title}</h2>
 
                 {intro && (
                 <section className="space-y-4">
-                    <h3 className="text-xl font-semibold">Introduction</h3>
+                    <h3 className="text-xl tracking-wide">Introduction</h3>
                     <p>{intro}</p>
                 </section>
                 )}
 
                 {formula && (
                 <section className="space-y-4">
-                    <h3 className="text-xl font-semibold">Formula</h3>
+                    <h3 className="text-xl tracking-wide">Formula</h3>
                     <div className="flex items-center space-x-4">
                         <p className="text-lg tracking-wider bg-gray-200 py-4 px-6 w-fit rounded">{formula}</p>
                         <button 
@@ -55,7 +63,7 @@ const Page = ({ calcType }) => {
                 
                 {steps && (
                 <section className="space-y-4">
-                    <h3 className="text-xl font-semibold">Step-By-Step</h3>
+                    <h3 className="text-xl tracking-wide">Step-By-Step</h3>
                     <ol className="list-decimal list-inside space-y-8">
                         {steps.map((step, index) => (
                             <li key={index}>{step}</li>
@@ -69,6 +77,23 @@ const Page = ({ calcType }) => {
             <div className="flex justify-center order-1 md:order-2 md:w-1/2 md:self-start m-12">
                 <Calculator calcType={calcType} /> 
             </div>
+        </div>
+
+        <div className="self-start m-12 w-full">
+            <h3 className="text-2xl tracking-wide mb-4">Glossary of All Calculators</h3>
+            <ul className="grid sm:grid-cols-2 md:grid-cols-3 gap-2">
+                {glossary.map(({ calcType, label, path }) => (
+                        <li key={calcType}>
+                            <a 
+                                href={path} 
+                                className="text-blue-500 hover:underline"
+                            >
+                                {label}
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+            </div>  
         </div>
     );
 };
