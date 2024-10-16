@@ -12,6 +12,11 @@ const Page = ({ calcType }) => {
     const intro = calcData[category][route?.calcType]?.desc; 
     const formula = calcData[category][route?.calcType]?.formula; 
     const steps = calcData[category][route?.calcType]?.steps;
+    const relatedCalculators = Object.entries(calcData[category]).map(([key, value]) => ({
+        calcType: key,
+        label: value.label,
+        path: calculatorRoutes.find(route => route.calcType === key)?.path || '#',
+    }));
     const glossary = Object.keys(calcData).flatMap(category => 
         Object.entries(calcData[category]).map(([key, value]) => ({
             calcType: key,
@@ -34,7 +39,7 @@ const Page = ({ calcType }) => {
         <div className="flex flex-col p-6 md:p-12">
         <div className="flex flex-col items-center md:flex-row">
             <div className="order-2 md:order-1 md:w-1/2 m-12 space-y-8 bg-white rounded p-8 md:py-12 md:pr-12">
-                <h2 className="text-2xl md:text-4xl tracking-wide font-semibold">{title}</h2>
+                <h2 className="text-3xl md:text-4xl tracking-wide">{title}</h2>
 
                 {intro && (
                 <section className="space-y-4">
@@ -77,6 +82,22 @@ const Page = ({ calcType }) => {
             <div className="flex justify-center order-1 md:order-2 md:w-1/2 md:self-start m-12">
                 <Calculator calcType={calcType} /> 
             </div>
+        </div>
+        
+         <div className="self-start mx-12 w-full">
+            <h3 className="text-2xl tracking-wide mb-4">Related Calculators</h3>
+            <ul className="flex flex-col gap-2">
+                {relatedCalculators.map(({ calcType, label, path }) => (
+                    <li key={calcType}>
+                        <a 
+                            href={path} 
+                            className="text-blue-500 hover:underline"
+                        >
+                            {label}
+                        </a>
+                    </li>
+                ))}
+            </ul>
         </div>
 
         <div className="self-start m-12 w-full">
