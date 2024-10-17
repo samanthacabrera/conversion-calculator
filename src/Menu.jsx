@@ -64,7 +64,7 @@ const Menu = () => {
           scrollbarWidth: 'none' 
         }}
       >
-        <div className="flex flex-col space-y-2 my-16 pl-12 pr-8 space-y-4">
+        <div className="flex flex-col space-y-2 my-16 pl-12 pr-8 space-y-6">
           <h2 className="text-2xl tracking-wide">Quick Links</h2>
           <ul className="mb-1">
             <li className="hover:underline hover:scale-105 transition-all duration-100">
