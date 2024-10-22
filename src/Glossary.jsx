@@ -37,10 +37,9 @@ const Glossary = () => {
                     <h3 className="text-2xl tracking-wide mb-4">Related Calculators</h3>
                     <ul className="flex flex-col gap-2">
                         {relatedCalculators.map(({ calcType, label, path }) => (
-                            <li key={calcType}>
+                            <li key={calcType}  className="hover:-translate-y-1 hover:underline transition-all duration-200">
                                 <a 
                                     href={path} 
-                                    className="text-blue-500 hover:underline"
                                 >
                                     {label}
                                 </a>
@@ -53,10 +52,9 @@ const Glossary = () => {
             <h3 className="text-2xl tracking-wide mb-4">Glossary of All Calculators</h3>
             <ul className="grid lg:grid-cols-3 gap-2 gap-x-44">
                 {glossary.map(({ calcType, label, path }) => (
-                    <li key={calcType}>
+                    <li key={calcType} className="hover:-translate-y-1 hover:underline transition-all duration-200">
                         <a 
                             href={path} 
-                            className="text-blue-500 hover:underline"
                         >
                             {label}
                         </a>

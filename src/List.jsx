@@ -25,7 +25,7 @@ const List = ({ selectedCategory }) => {
 
     return (
         <div className="relative w-full flex flex-col items-center">
-            <div className="fixed top-4 right-4">
+            <div className="fixed top-4 left-4">
                  <button 
                 onClick={toggleView} 
                 className="transition duration-300 hover:scale-105 flex items-center">
