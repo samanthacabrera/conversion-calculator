@@ -34,7 +34,7 @@ const Glossary = () => {
 
             {currentCalcType && (
                 <div className="my-12 w-full">
-                    <h3 className="text-2xl tracking-wide mb-4">Related Calculators</h3>
+                    <h3 className="text-2xl tracking-wide mb-4">Glossary of Related Calculators</h3>
                     <ul className="flex flex-col gap-2">
                         {relatedCalculators.map(({ calcType, label, path }) => (
                             <li key={calcType}  className="hover:-translate-y-1 hover:underline transition-all duration-200">
