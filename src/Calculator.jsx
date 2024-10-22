@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { calcData } from './data';
 
-const Calculator = ({ calcType }) => {
+const Calculator = ({ calcType, condensed }) => {
     const calcInfo = Object.values(calcData).flatMap(Object.values).find(calc => calc.calcType === calcType);
     
     const [inputs, setInputs] = useState({});
@@ -21,31 +21,33 @@ const Calculator = ({ calcType }) => {
     };
 
     return (
-        <div className={`flex flex-col items-center bg-${calcInfo.color}-200 text-center p-8 space-y-4 rounded h-[310px] w-[300px]`}>
-
-            <Link to={`/calculator/${calcType}`} className="text-xl tracking-wide hover:underline">
-               {calcInfo.label}
+        <div className={`flex flex-col items-center bg-${calcInfo.color}-200 text-center p-4 space-y-2 rounded ${condensed ? 'h-[60px]' : 'h-[310px]'}`}>
+            <Link to={`/calculator/${calcType}`} className="text-xl tracking-wide hover:underline mb-6">
+                {calcInfo.label}
             </Link>
 
-            <div className="flex flex-col justify-center space-y-2 min-h-[150px]">
-                {calcInfo.dimensions.map((dim, index) => (
-                    <div key={index} className="flex justify-between items-center space-x-2 w-full">
-                        <label>{dim}:</label>
-                        <input
-                            type="number"
-                            name={dim.toLowerCase().replace(" ", "_")} 
-                            onChange={handleChange}
-                            className="p-2 rounded-lg border border-gray-300 w-[100px]"
-                            placeholder="1"
-                        />
+            {!condensed && (
+                <>
+                    <div className="flex flex-col justify-center space-y-4 min-h-[150px]">
+                        {calcInfo.dimensions.map((dim, index) => (
+                            <div key={index} className="flex justify-between items-center space-x-2 w-full">
+                                <label>{dim}:</label>
+                                <input
+                                    type="number"
+                                    name={dim.toLowerCase().replace(" ", "_")} 
+                                    onChange={handleChange}
+                                    className="p-2 rounded-lg border border-gray-300 w-[100px]"
+                                    placeholder="1"
+                                />
+                            </div>
+                        ))}
                     </div>
-                ))}
-            </div>
 
-            {result !== null && (
-                <h3 className="tracking-wide">  Result = {typeof result === 'number' && !isNaN(result) ? result.toFixed(2) : result}</h3>
+                    {result !== null && (
+                        <h3 className="tracking-wide">Result = {typeof result === 'number' && !isNaN(result) ? result.toFixed(2) : result}</h3>
+                    )}
+                </>
             )}
-            
         </div>
     );
 };
