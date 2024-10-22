@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { calcData } from './data';
 import { calculatorRoutes } from './routes'; 
 import Calculator from './Calculator'; 
-import Glossary from './Glossary';
 
 const Page = ({ calcType }) => {
     const [copySuccess, setCopySuccess] = useState('');
@@ -76,7 +75,7 @@ const Page = ({ calcType }) => {
                 </div>
             </div>
             
-            <div className="self-start mx-12 w-full">
+            {/* <div className="self-start mx-12 w-full">
                 <h3 className="text-2xl tracking-wide mb-4">Related Calculators</h3>
                 <ul className="flex flex-col gap-2">
                     {relatedCalculators.map(({ calcType, label, path }) => (
@@ -90,9 +89,7 @@ const Page = ({ calcType }) => {
                         </li>
                     ))}
                 </ul>
-            </div>
-
-            <Glossary /> 
+            </div> */}
         </div>
     );
 };

@@ -6,6 +6,7 @@ import Header from './Header';
 import Filter from './Filter';
 import List from './List';
 import Page from './Page';
+import Glossary from './Glossary';
 import Footer from './Footer';
 
 const App = () => {
@@ -34,6 +35,8 @@ const App = () => {
               />
           ))}
         </Routes>
+
+        <Glossary/>
         
         <Footer />
         
