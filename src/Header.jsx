@@ -11,8 +11,9 @@ const Header = () => {
                 </h1>
             </Link>
 
-            <p className="w-2/3 lg:w-full text-sm lg:text-base text-center text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-               Welcome to <span className="italic">Calcalooza</span>, your go-to site for everyday calculations. Bookmark us for quick access and explore our wide range of tools below.
+             <p className="w-2/3 lg:w-full text-sm lg:text-base text-center text-gray-600 opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                Welcome to <span className="italic">Calcalooza</span>, your go-to site for everyday calculations. 
+                Bookmark us for quick access and explore our wide range of tools below.
             </p>
             
         </div>

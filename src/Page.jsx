@@ -28,9 +28,9 @@ const Page = ({ calcType }) => {
     };
 
     return (
-        <div className="flex flex-col p-6 md:p-12">
+        <div className="flex flex-col p-6 md:p-12 w-3/4">
             <div className="flex flex-col items-center md:flex-row">
-                <div className="order-2 md:order-1 md:w-2/3 m-12 space-y-8 bg-white rounded p-8 md:py-12 md:pr-12">
+                <div className="order-2 md:order-1 md:w-2/3 my-12 md:my-0 space-y-8 bg-white rounded p-8 md:py-12 md:pr-12">
                     <h2 className="text-3xl md:text-4xl tracking-wide">{title}</h2>
 
                     {intro && (
@@ -70,26 +70,11 @@ const Page = ({ calcType }) => {
                     )}
                 </div>
             
-                <div className="flex justify-center order-1 md:order-2 md:w-1/2 md:self-start m-12">
+                <div className="flex justify-center order-1 md:order-2 md:w-1/2 md:self-start">
                     <Calculator calcType={calcType} /> 
                 </div>
             </div>
             
-            {/* <div className="self-start mx-12 w-full">
-                <h3 className="text-2xl tracking-wide mb-4">Related Calculators</h3>
-                <ul className="flex flex-col gap-2">
-                    {relatedCalculators.map(({ calcType, label, path }) => (
-                        <li key={calcType}>
-                            <a 
-                                href={path} 
-                                className="text-blue-500 hover:underline"
-                            >
-                                {label}
-                            </a>
-                        </li>
-                    ))}
-                </ul>
-            </div> */}
         </div>
     );
 };
