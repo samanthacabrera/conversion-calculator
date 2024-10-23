@@ -8,6 +8,7 @@ import List from './List';
 import Page from './Page';
 import Glossary from './Glossary';
 import Footer from './Footer';
+import Content from './Content';
 
 const App = () => {
   const [selectedCategory, setSelectedCategory] = useState('AllCalculators');
@@ -25,6 +26,7 @@ const App = () => {
             <>
               <Filter onSelectCategory={setSelectedCategory} />
               <List selectedCategory={selectedCategory} />
+              <Content/>
             </>
             } />
           {calculatorRoutes.map(({ path, calcType }) => (

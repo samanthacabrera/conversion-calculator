@@ -68,6 +68,7 @@ const Page = ({ calcType }) => {
                         </ol>
                     </section>
                     )}
+
                 </div>
             
                 <div className="flex justify-center order-1 md:order-2 md:w-1/2 md:self-start">
