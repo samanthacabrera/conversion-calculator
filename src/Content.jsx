@@ -47,7 +47,7 @@ const Content = () => {
             </section>
 
             <section className="mb-12 space-y-2">
-                <h3 className="text-2xl font-semibold mb-4">Educational Resources</h3>
+                <h3 className="text-2xl font-semibold mb-4">Resources</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
                     At Calcalooza, we believe that knowledge is just as important as the tools we provide. To empower our users and enhance their understanding of various calculations, we've compiled a range of educational resources tailored to different skill levels and needs. Whether you are a student trying to grasp fundamental concepts or a professional seeking to refine your expertise, we have something for you.
                 </p>

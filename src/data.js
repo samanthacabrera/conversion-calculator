@@ -2,7 +2,7 @@ export const calcData = {
     AreaCalculators: {
         areaRectangle: {
             calcType: "areaRectangle",
-            label: "Area of a Retangle",
+            label: "Area of a Rectangle",
             color: "sky",
             desc: "Area measures the amount of space inside a two-dimensional shape. The area of a rectangle is calculated by multiplying its length and width.",
             formula: "A = l × w",
@@ -13,9 +13,10 @@ export const calcData = {
                 "Multiply the length by the width to get the area (A).",
             ],
             dimensions: [
-                "Length",
-                "Width"
+                { name: "Length", definition: "The longer side of a rectangle, measured in units such as meters or inches." },
+                { name: "Width", definition: "The shorter side of a rectangle, also measured in units like meters or inches." }
             ],
+            wordProblem: "A garden measures 8 meters in length and 5 meters in width. Calculate the area to determine how much space is available for planting.",
             units: {},
         },
         areaTriangle: {
@@ -32,9 +33,10 @@ export const calcData = {
                 "Divide the result by 2 to get the area (A).",
             ],
             dimensions: [
-                "Base",
-                "Height"
+                { name: "Base", definition: "The side of the triangle considered as its foundation, usually the longest side." },
+                { name: "Height", definition: "The perpendicular distance from the base to the opposite vertex." }
             ],
+            wordProblem: "A triangular park has a base of 12 meters and a height of 9 meters. Find the area to know how much ground the park covers.",
             units: {},
         },
         areaTrapezoid: {
@@ -52,10 +54,11 @@ export const calcData = {
                 "Divide the result by 2 to get the area (A).",
             ],
             dimensions: [
-                "Base 1",
-                "Base 2",
-                "Height"
+                { name: "Base 1", definition: "The longer of the two parallel sides of the trapezoid." },
+                { name: "Base 2", definition: "The shorter of the two parallel sides of the trapezoid." },
+                { name: "Height", definition: "The perpendicular distance between the two bases." }
             ],
+            wordProblem: "A trapezoidal flower bed has one base measuring 10 meters, the other base measuring 6 meters, and a height of 4 meters. What is the area of the flower bed?",
             units: {},
         },
         areaCircle: {
@@ -72,8 +75,9 @@ export const calcData = {
                 "Multiply the result by π (approximately 3.14) to get the area (A).",
             ],
             dimensions: [
-                "Radius"
+                { name: "Radius", definition: "The distance from the center of the circle to any point on its boundary." }
             ],
+            wordProblem: "A circular pond has a radius of 5 meters. Calculate its area to determine the surface space occupied by the water.",
             units: {},
         },
         areaSector: {
@@ -91,9 +95,10 @@ export const calcData = {
                 "Multiply this result by 0.5 and by the angle in radians to get the area (A).",
             ],
             dimensions: [
-                "Radius",
-                "Angle (radians)"
+                { name: "Radius", definition: "The distance from the center of the circle to any point on its boundary." },
+                { name: "Angle (radians)", definition: "The central angle of the sector, measured in radians, which determines the size of the 'slice'." }
             ],
+            wordProblem: "A pizza slice makes an angle of 45° at the center of the pizza, which has a radius of 10 inches. What is the area of the slice?",
             units: {},
         },
         areaParallelogram: {
@@ -109,264 +114,213 @@ export const calcData = {
                 "Multiply the base by the height to get the area (A).",
             ],
             dimensions: [
-                "Base",
-                "Height"
+                { name: "Base", definition: "One of the parallel sides of the parallelogram." },
+                { name: "Height", definition: "The perpendicular distance from the base to the opposite side." }
             ],
+            wordProblem: "A parallelogram has a base of 15 cm and a height of 8 cm. Calculate the area of the shape.",
             units: {},
         },
     },
     SurfaceAreaCalculators: {
-        surfaceAreaSphere: {
-            calcType: "surfaceAreaSphere",
-            label: "Surface Area of a Sphere",
-            color: "pink",
-            desc: "The surface area of a sphere is calculated based on its radius. ",
-            formula: "A = 4 × π × r²",
-            calculate: (radius) => 4 * Math.PI * Math.pow(radius, 2),
-            steps: [
-                "Measure the radius (r) of the sphere.",
-                "Write down the formula: A = 4 × π × r².",
-                "Square the radius (multiply r by itself).",
-                "Multiply the result by π (approximately 3.14).",
-                "Multiply the final result by 4 to get the surface area (A).",
-            ],
-            dimensions: [
-                "Radius"
-            ],
-            units: {},
-        },
-        surfaceAreaCone: {
-            calcType: "surfaceAreaCone",
-            label: "Surface Area of a Cone",
-            color: "yellow",
-            desc: "The surface area of a cone is calculated using its radius and slant height. The slant height of a cone is the distance from the top of the cone (the apex) to any point on the edge of its circular base along the surface of the cone. ",
-            formula: "A = π × r × (r + l)",
-            calculate: (radius, slantHeight) => Math.PI * radius * (radius + slantHeight),
-            steps: [
-                "Measure the radius (r) and the slant height (l) of the cone.",
-                "Write down the formula: A = π × r × (r + l).",
-                "Calculate the lateral surface area by adding the radius to the slant height.",
-                "Multiply this result by π to get the surface area (A).",
-            ],
-            dimensions: [
-                "Radius",
-                "Slant Height"
-            ],
-            units: {},
-        },
         surfaceAreaCube: {
             calcType: "surfaceAreaCube",
             label: "Surface Area of a Cube",
-            color: "orange",
-            desc: "The surface area of a cube is calculated based on the length of one side.",
-            formula: "A = 6 × s²",
+            color: "sky",
+            desc: "The surface area of a cube is calculated by adding up the areas of all six faces. Each face of a cube is a square.",
+            formula: "SA = 6 × a²",
             calculate: (side) => 6 * Math.pow(side, 2),
             steps: [
-                "Measure the length of one side of the cube (s).",
-                "Write down the formula: A = 6 × s².",
-                "Square the side length (multiply s by itself).",
-                "Multiply the result by 6 to get the surface area (A).",
+                "Measure the length of one side (a) of the cube.",
+                "Write down the formula: SA = 6 × a².",
+                "Square the length of the side (multiply a by itself).",
+                "Multiply the result by 6 to get the surface area (SA).",
             ],
             dimensions: [
-                "Side"
+                { name: "Side Length", definition: "The length of one edge of the cube." }
             ],
+            wordProblem: "A cube-shaped storage box has a side length of 3 meters. Calculate its surface area to determine how much paint is needed to cover it.",
+            units: {},
+        },
+        surfaceAreaRectangularPrism: {
+            calcType: "surfaceAreaRectangularPrism",
+            label: "Surface Area of a Rectangular Prism",
+            color: "orange",
+            desc: "The surface area of a rectangular prism is found by calculating the areas of all six rectangular faces.",
+            formula: "SA = 2(lw + lh + wh)",
+            calculate: (length, width, height) => 2 * (length * width + length * height + width * height),
+            steps: [
+                "Measure the length (l), width (w), and height (h) of the rectangular prism.",
+                "Write down the formula: SA = 2(lw + lh + wh).",
+                "Calculate the areas of the three pairs of opposite faces.",
+                "Multiply the sum by 2 to get the surface area (SA).",
+            ],
+            dimensions: [
+                { name: "Length", definition: "The longest side of the rectangular prism." },
+                { name: "Width", definition: "The shorter side of the rectangular prism." },
+                { name: "Height", definition: "The vertical dimension of the prism." }
+            ],
+            wordProblem: "A rectangular box has a length of 10 cm, a width of 5 cm, and a height of 8 cm. Calculate the surface area to determine how much wrapping paper is needed.",
             units: {},
         },
         surfaceAreaCylinder: {
             calcType: "surfaceAreaCylinder",
             label: "Surface Area of a Cylinder",
-            color: "orange",
-            desc: "The surface area of a cylinder is calculated using the radius and height. It includes the areas of the two circular bases and the curved surface.",
-            formula: "A = 2 × π × r × (r + h)",
+            color: "pink",
+            desc: "The surface area of a cylinder is the sum of the areas of the two circular bases and the rectangle that wraps around the side.",
+            formula: "SA = 2πr(r + h)",
             calculate: (radius, height) => 2 * Math.PI * radius * (radius + height),
             steps: [
-                "Measure the radius (r) and height (h) of the cylinder.",
-                "Write down the formula: A = 2 × π × r × (r + h).",
-                "Calculate the area of the circular bases by multiplying the radius by 2.",
-                "Add the height to the radius.",
-                "Multiply the result by π to get the total surface area (A).",
+                "Measure the radius (r) of the circular base and the height (h) of the cylinder.",
+                "Write down the formula: SA = 2πr(r + h).",
+                "Calculate the area of the circular bases and the side surface area.",
+                "Add the areas together to get the surface area (SA).",
             ],
             dimensions: [
-                "Radius",
-                "Height"
+                { name: "Radius", definition: "The distance from the center of the circular base to its edge." },
+                { name: "Height", definition: "The distance between the two circular bases." }
             ],
+            wordProblem: "A cylindrical water tank has a radius of 4 meters and a height of 10 meters. Calculate its surface area to find out how much paint is needed for the outside.",
             units: {},
         },
-        surfaceAreaRectangle: {
-            calcType: "surfaceAreaRectangle",
-            label: "Surface Area of a Rectangle",
-            color: "sky",
-            desc: "The surface area of a rectangular prism is calculated by summing the areas of all six rectangular faces.",
-            formula: "A = 2 × (l × w + l × h + w × h)",
-            calculate: (length, width, height) => 2 * (length * width + length * height + width * height),
-            steps: [
-                "Measure the length (l), width (w), and height (h) of the rectangular prism.",
-                "Write down the formula: A = 2 × (l × w + l × h + w × h).",
-                "Calculate the area of each pair of opposite faces.",
-                "Add these areas together and multiply by 2 to get the surface area (A).",
-            ],
-            dimensions: [
-                "Length",
-                "Width",
-                "Height"
-            ],
-            units: {},
-        },
-        surfaceAreaEllipsoid: {
-            calcType: "surfaceAreaEllipsoid",
-            label: "Surface Area of an Ellipsoid",
+        surfaceAreaCone: {
+            calcType: "surfaceAreaCone",
+            label: "Surface Area of a Cone",
             color: "lime",
-            desc: "The surface area of an ellipsoid is calculated using the lengths of its axes.",
-            formula: "A ≈ 4π × \left( \frac{a^{p}b^{p}+b^{p}c^{p}+c^{p}a^{p}}{3} \right)^{\frac{1}{p}}",
-            calculate: (axis1, axis2, axis3) => {
-                const p = 1.6075; // Approximation constant
-                return 4 * Math.PI * Math.pow((Math.pow(axis1 * axis2, p) + Math.pow(axis2 * axis3, p) + Math.pow(axis3 * axis1, p)) / 3, 1 / p);
-            },
+            desc: "The surface area of a cone is the sum of the base area and the lateral area, which is the area of the cone's slanted side.",
+            formula: "SA = πr(r + l)",
+            calculate: (radius, slantHeight) => Math.PI * radius * (radius + slantHeight),
             steps: [
-                "Measure the lengths of the three axes (a, b, c) of the ellipsoid.",
-                "Write down the formula: A ≈ 4π × \left( \frac{a^{p}b^{p}+b^{p}c^{p}+c^{p}a^{p}}{3} \right)^{\frac{1}{p}}.",
-                "Substitute the axis values to calculate the surface area (A).",
+                "Measure the radius (r) of the base and the slant height (l) of the cone.",
+                "Write down the formula: SA = πr(r + l).",
+                "Calculate the base area and the lateral area.",
+                "Add the areas together to get the surface area (SA).",
             ],
             dimensions: [
-                "Axis 1",
-                "Axis 2",
-                "Axis 3"
+                { name: "Radius", definition: "The distance from the center of the base to the edge of the base." },
+                { name: "Slant Height", definition: "The distance from the base to the apex of the cone measured along the surface." }
             ],
+            wordProblem: "A cone-shaped party hat has a radius of 3 inches and a slant height of 5 inches. Calculate the surface area to determine how much fabric is needed to cover it.",
+            units: {},
+        },
+        surfaceAreaSphere: {
+            calcType: "surfaceAreaSphere",
+            label: "Surface Area of a Sphere",
+            color: "purple",
+            desc: "The surface area of a sphere is calculated using its radius. This measurement is important in various fields, including physics and engineering.",
+            formula: "SA = 4πr²",
+            calculate: (radius) => 4 * Math.PI * Math.pow(radius, 2),
+            steps: [
+                "Measure the radius (r) of the sphere.",
+                "Write down the formula: SA = 4πr².",
+                "Square the radius (multiply r by itself).",
+                "Multiply the result by 4 and π to get the surface area (SA).",
+            ],
+            dimensions: [
+                { name: "Radius", definition: "The distance from the center of the sphere to any point on its surface." }
+            ],
+            wordProblem: "A basketball has a radius of 12 cm. Calculate its surface area to determine how much material is needed to make it.",
             units: {},
         },
     },
     VolumeCalculators: {
-        volumeSphere: {
-            calcType: "volumeSphere",
-            label: "Volume of a Sphere",
-            color: "purple",
-            desc: "Volume measures the amount of space a three-dimensional object occupies. A sphere is a perfectly round object, and understanding its volume helps in fields ranging from physics to everyday applications like sports.",
-            formula: "V = 4/3 × π × r³",
-            calculate: (radius) => (4 / 3) * Math.PI * Math.pow(radius, 3),
-            steps: [
-                "Measure the radius of the sphere. Let's call it (r).",
-                "Write down the formula: V = 4/3 × π × r³.",
-                "Substitute the radius (r) into the formula: V = 4/3 × π × (r)³.",
-                "Calculate (r)³ by multiplying r × r × r.",
-                "Substitute the result of (r)³ back into the formula.",
-                "Multiply the result by π (approximately 3.14).",
-                "Substitute this result back into the formula.",
-                "Multiply the result by 4.",
-                "Substitute this result back into the formula.",
-                "Finally, divide by 3 to get the volume (V).",
-            ],
-            dimensions: [
-                "Radius"
-            ],
-            units: {},
-        },
-        volumeCone: {
-            calcType: "volumeCone",
-            label: "Volume of a Cone",
-            color: "yellow",
-            desc: "Volume measures the amount of space a three-dimensional object occupies. A cone has a circular base and tapers to a point, and its volume calculation is useful in various applications, such as designing funnels.",
-            formula: "V = 1/3 × π × r² × h",
-            calculate: (radius, height) => (1 / 3) * Math.PI * Math.pow(radius, 2) * height,
-            steps: [
-                "Measure the radius of the base (r) and the height (h) of the cone.",
-                "Write down the formula: V = 1/3 × π × r² × h.",
-                "Substitute the radius (r) into the formula: V = 1/3 × π × (r)² × h.",
-                "Calculate (r)² by multiplying r × r.",
-                "Substitute the result of (r)² back into the formula.",
-                "Multiply this result by π (approximately 3.14).",
-                "Substitute this result back into the formula.",
-                "Multiply the result by the height (h).",
-                "Substitute this result back into the formula.",
-                "Finally, divide by 3 to get the volume (V).",
-            ],
-            dimensions: [
-                "Radius",
-                "Height"
-            ],
-            units: {},
-        },
         volumeCube: {
             calcType: "volumeCube",
             label: "Volume of a Cube",
-            color: "pink",
-            desc: "Volume measures the amount of space a three-dimensional object occupies. A cube is a special type of rectangular prism with all sides of equal length. Understanding how to calculate the volume of a cube is important in various fields, including architecture and engineering, as it helps determine how much material is needed to fill the space or how much space is available for storage.",
-            formula: "V = s³",
+            color: "sky",
+            desc: "The volume of a cube is found by multiplying the length of one side by itself three times.",
+            formula: "V = a³",
             calculate: (side) => Math.pow(side, 3),
             steps: [
-                "Measure the length of one side of the cube. Let's call it (s).",
-                "Write down the formula: V = s³.",
-                "Calculate (s)³ by multiplying s × s × s.",
-                "Substitute the result of (s)³ back into the formula. This is the volume (V).",
+                "Measure the length of one side (a) of the cube.",
+                "Write down the formula: V = a³.",
+                "Multiply the length of the side by itself three times.",
+                "The result is the volume (V) of the cube.",
             ],
             dimensions: [
-                "Side"
+                { name: "Side Length", definition: "The length of one edge of the cube." }
             ],
+            wordProblem: "A cube-shaped storage box has a side length of 3 meters. Calculate its volume to determine how much space is available inside.",
+            units: {},
+        },
+        volumeRectangularPrism: {
+            calcType: "volumeRectangularPrism",
+            label: "Volume of a Rectangular Prism",
+            color: "orange",
+            desc: "The volume of a rectangular prism is calculated by multiplying its length, width, and height.",
+            formula: "V = l × w × h",
+            calculate: (length, width, height) => length * width * height,
+            steps: [
+                "Measure the length (l), width (w), and height (h) of the rectangular prism.",
+                "Write down the formula: V = l × w × h.",
+                "Multiply the length, width, and height together.",
+                "The result is the volume (V) of the rectangular prism.",
+            ],
+            dimensions: [
+                { name: "Length", definition: "The longest side of the rectangular prism." },
+                { name: "Width", definition: "The shorter side of the rectangular prism." },
+                { name: "Height", definition: "The vertical dimension of the prism." }
+            ],
+            wordProblem: "A rectangular box has a length of 10 cm, a width of 5 cm, and a height of 8 cm. Calculate the volume to determine how much water it can hold.",
             units: {},
         },
         volumeCylinder: {
             calcType: "volumeCylinder",
             label: "Volume of a Cylinder",
-            color: "sky",
-            desc: "Volume is a measure of how much space a three-dimensional object occupies. A cylinder is a shape with two parallel circular bases connected by a curved surface. Calculating the volume of a cylinder is essential in many practical applications, such as determining the capacity of containers like cans and tanks, and in various engineering contexts where fluid storage is involved.",
-            formula: "V = π × r² × h",
+            color: "pink",
+            desc: "The volume of a cylinder is found by multiplying the area of the circular base by the height of the cylinder.",
+            formula: "V = πr²h",
             calculate: (radius, height) => Math.PI * Math.pow(radius, 2) * height,
             steps: [
-                "Measure the radius of the base (r) and the height (h) of the cylinder.",
-                "Write down the formula: V = π × r² × h.",
-                "Substitute the radius (r) into the formula: V = π × (r)² × h.",
-                "Calculate (r)² by multiplying r × r.",
-                "Substitute the result of (r)² back into the formula.",
-                "Multiply this result by π (approximately 3.14).",
-                "Substitute this result back into the formula.",
-                "Multiply the result by the height (h).",
-                "Substitute this result back into the formula. This is the volume (V).",
+                "Measure the radius (r) of the circular base and the height (h) of the cylinder.",
+                "Write down the formula: V = πr²h.",
+                "Calculate the area of the base (πr²).",
+                "Multiply the area by the height to get the volume (V).",
             ],
             dimensions: [
-                "Raidus",
-                "Height"
+                { name: "Radius", definition: "The distance from the center of the circular base to its edge." },
+                { name: "Height", definition: "The distance between the two circular bases." }
             ],
+            wordProblem: "A cylindrical water tank has a radius of 4 meters and a height of 10 meters. Calculate its volume to find out how much water it can hold.",
             units: {},
         },
-        volumeRectangle: {
-            calcType: "volumeRectangle",
-            label: "Volume of a Rectangle",
+        volumeCone: {
+            calcType: "volumeCone",
+            label: "Volume of a Cone",
             color: "lime",
-            desc: "Volume quantifies the amount of space a three-dimensional object occupies. A rectangular prism has six rectangular faces, and its volume calculation is crucial for various applications, including packaging, shipping, and architecture. Knowing how to calculate the volume of a rectangular prism helps determine how much space is available for contents and how to optimize storage.",
-            formula: "V = l × w × h",
-            calculate: (length, width, height) => length * width * height,
+            desc: "The volume of a cone is calculated using the area of the base and the height of the cone.",
+            formula: "V = (1/3)πr²h",
+            calculate: (radius, height) => (1 / 3) * Math.PI * Math.pow(radius, 2) * height,
             steps: [
-                "Measure the length (l), width (w), and height (h) of the box.",
-                "Write down the formula: V = l × w × h.",
-                "Multiply the length (l) by the width (w).",
-                "Substitute this result back into the formula as the Area.",
-                "Multiply the Area by the height (h).",
-                "Substitute this result back into the formula. This is the volume (V).",
+                "Measure the radius (r) of the base and the height (h) of the cone.",
+                "Write down the formula: V = (1/3)πr²h.",
+                "Calculate the area of the base (πr²).",
+                "Multiply the area by the height and then divide by 3 to get the volume (V).",
             ],
             dimensions: [
-                "Length",
-                "Width",
-                "Heigth"
+                { name: "Radius", definition: "The distance from the center of the base to the edge of the base." },
+                { name: "Height", definition: "The vertical distance from the base to the apex of the cone." }
             ],
+            wordProblem: "A cone-shaped party hat has a radius of 3 inches and a height of 5 inches. Calculate the volume to find out how much ice cream it can hold.",
             units: {},
         },
-        volumeSquarePyramid: {
-            calcType: "volumeSquarePyramid",
-            label: "Volume of a Square Pyramid",
+        volumeSphere: {
+            calcType: "volumeSphere",
+            label: "Volume of a Sphere",
             color: "purple",
-            desc: "The volume of a square pyramid is calculated using its base area and height.",
-            formula: "V = \frac{1}{3} × A_{base} × h",
-            calculate: (baseLength, height) => (1 / 3) * Math.pow(baseLength, 2) * height,
+            desc: "The volume of a sphere is calculated using its radius, which is a measure of the distance from the center to any point on the surface.",
+            formula: "V = (4/3)πr³",
+            calculate: (radius) => (4 / 3) * Math.PI * Math.pow(radius, 3),
             steps: [
-                "Measure the length of the base (b) and the height (h) of the pyramid.",
-                "Write down the formula: V = (1/3) × A_{base} × h.",
-                "Calculate the base area (A_{base}) by squaring the base length.",
-                "Multiply the base area by the height and divide by 3 to get the volume (V).",
+                "Measure the radius (r) of the sphere.",
+                "Write down the formula: V = (4/3)πr³.",
+                "Cube the radius (multiply r by itself three times).",
+                "Multiply the result by (4/3)π to get the volume (V).",
             ],
             dimensions: [
-                "Base Length",
-                "Height"
+                { name: "Radius", definition: "The distance from the center of the sphere to any point on its surface." }
             ],
+            wordProblem: "A basketball has a radius of 12 cm. Calculate its volume to determine how much air is needed to fill it.",
             units: {},
         },
-    }
+    },
 };
