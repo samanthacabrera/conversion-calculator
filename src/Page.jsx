@@ -32,7 +32,7 @@ const Page = ({ calcType }) => {
     };
 
     return (
-        <div className="flex flex-col max-w-6xl mx-auto p-6 bg-white rounded-lg shadow-lg">
+        <div className="flex flex-col max-w-3xl mx-2 md:mx-auto my-4 md:my-8 p-2 md:p-12 border bg-white rounded-lg shadow-lg">
           
             <nav className="p-8">
                 <h2 className="text-xl font-semibold">Contents</h2>
@@ -99,7 +99,7 @@ const Page = ({ calcType }) => {
                         <div className="space-y-4">
                             {dimensions.map((dimension, index) => (
                                 <div key={index} className="p-2">
-                                    <p>{dimension.name}: {dimension.definition}</p>
+                                    <p><span className="text-gray-700 font-semibold">{dimension.name}:</span> {dimension.definition}</p>
                                 </div>
                             ))}
                         </div>
