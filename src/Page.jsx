@@ -24,7 +24,7 @@ const Page = ({ calcType }) => {
 
     const copyToClipboard = () => {
         navigator.clipboard.writeText(formula).then(() => {
-            setCopySuccess('Formula copied to clipboard!');
+            setCopySuccess('copied to clipboard :)');
             setTimeout(() => setCopySuccess(''), 2000);
         }).catch(() => {
             setCopySuccess('Failed to copy formula');
@@ -32,58 +32,58 @@ const Page = ({ calcType }) => {
     };
 
     return (
-        <div className="flex max-w-6xl mx-auto">
-            {/* Sidebar Navigation */}
-            <aside className="w-1/4 p-6 bg-gray-100 rounded-l-xl sticky top-0 h-screen">
-                <h2 className="text-2xl font-semibold mb-6 text-blue-700">Sections</h2>
-                <nav className="space-y-4">
-                    <a href="#introduction" className="block text-lg hover:text-blue-700">Introduction</a>
-                    <a href="#calculator" className="block text-lg hover:text-blue-700">Calculator</a>
-                    <a href="#formula" className="block text-lg hover:text-blue-700">Formula</a>
-                    <a href="#steps" className="block text-lg hover:text-blue-700">Step-by-Step Guide</a>
-                    <a href="#definitions" className="block text-lg hover:text-blue-700">Definitions</a>
-                    <a href="#example" className="block text-lg hover:text-blue-700">Example Problem</a>
-                    <a href="#related" className="block text-lg hover:text-blue-700">Related Calculators</a>
-                </nav>
-            </aside>
+        <div className="flex flex-col max-w-6xl mx-auto p-6 bg-white rounded-lg shadow-lg">
+          
+            <nav className="p-8">
+                <h2 className="text-xl font-semibold">Contents</h2>
+                <div className="flex flex-col space-y-1 mt-2">
+                    {["Introduction", "Calculator", "Formula", "Steps", "Definitions", "Problems"].map((item, index) => (
+                        <a key={index} href={`#${item.toLowerCase().replace(" ", "")}`} className="text-gray-600 hover:text-lime-400 transition duration-200">
+                            {item}
+                        </a>
+                    ))}
+                </div>
+            </nav>
 
             {/* Main Content */}
-            <main className="flex-1 p-8 bg-white rounded-r-xl shadow-lg space-y-12">
+            <main className="mt-6 space-y-12">
                 {/* Title */}
-                <section id="introduction">
-                    <h1 className="text-4xl font-bold text-gray-800 mb-6">{title}</h1>
+                <section id="introduction" className="p-8">
+                    <h1 className="text-5xl font-bold text-gray-800 mb-4">{title}</h1>
                     <p className="text-lg text-gray-700 leading-relaxed">{intro}</p>
                 </section>
 
                 {/* Calculator Component */}
-                <section id="calculator" className="bg-gray-50 p-8 rounded-lg shadow-md">
-                    <h2 className="text-3xl font-semibold text-gray-800 mb-4">Interactive Calculator</h2>
+                <section id="calculator" className="p-8">
                     <Calculator calcType={calcType} />
                 </section>
 
                 {/* Formula */}
                 {formula && (
-                    <section id="formula">
-                        <h2 className="text-3xl font-semibold text-gray-800 mb-4">Formula</h2>
-                        <div className="flex items-center space-x-4">
-                            <p className="text-lg bg-gray-100 py-2 px-4 rounded-lg font-mono">{formula}</p>
+                    <section id="formula" className="p-8 border-4 border-lime-200 rounded">
+                        <h2 className="text-4xl font-semibold text-lime-200 mb-4 underline">Formula</h2>
+                        <div className="flex flex-row items-center md:space-x-4">
+                            <p className="text-lg bg-gray-100 py-4 px-12 rounded-lg font-mono w-auto">{formula}</p>
+    
                             <button 
                                 onClick={copyToClipboard}
-                                className="text-blue-600 hover:text-blue-800 transition duration-200"
+                                className="text-gray-300 rounded-lg px-3 py-2 hover:text-gray-400 transition duration-200"
                             >
-                                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-10 ml-1 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V5a2 2 0 012-2h6a2 2 0 012 2v6a2 2 0 01-2 2h-2m-4 4H5a2 2 0 01-2-2v-6a2 2 0 012-2h6a2 2 0 012 2v6a2 2 0 01-2 2z" />
                                 </svg>
                             </button>
-                            {copySuccess && <p className="text-green-500">{copySuccess}</p>}
+
+                            {copySuccess && <p className="text-gray-400">{copySuccess}</p>}
+                     
                         </div>
                     </section>
                 )}
 
                 {/* Step-by-Step Guide */}
                 {steps && (
-                    <section id="steps">
-                        <h2 className="text-3xl font-semibold text-gray-800 mb-4">Step-by-Step Guide</h2>
+                    <section id="steps" className="p-8 border-4 border-sky-200 rounded">
+                        <h2 className="text-4xl font-semibold text-sky-200 mb-4 underline">Step-by-Step Guide</h2>
                         <ol className="list-decimal list-inside space-y-4">
                             {steps.map((step, index) => (
                                 <li key={index} className="text-lg text-gray-700">{step}</li>
@@ -94,13 +94,12 @@ const Page = ({ calcType }) => {
 
                 {/* Definitions */}
                 {dimensions && dimensions.length > 0 && (
-                    <section id="definitions">
-                        <h2 className="text-3xl font-semibold text-gray-800 mb-4">Definitions</h2>
+                    <section id="definitions" className="p-8 border-4 border-orange-200 rounded">
+                        <h2 className="text-4xl font-semibold text-orange-200 mb-4 underline">Definitions</h2>
                         <div className="space-y-4">
                             {dimensions.map((dimension, index) => (
-                                <div key={index} className="bg-gray-50 p-4 rounded-lg">
-                                    <span className="font-semibold text-gray-800">{dimension.name}:</span>
-                                    <p className="text-gray-700">{dimension.definition}</p>
+                                <div key={index} className="p-2">
+                                    <p>{dimension.name}: {dimension.definition}</p>
                                 </div>
                             ))}
                         </div>
@@ -109,23 +108,11 @@ const Page = ({ calcType }) => {
 
                 {/* Example Problem */}
                 {wordProblem && (
-                    <section id="example">
-                        <h2 className="text-3xl font-semibold text-gray-800 mb-4">Example Problem</h2>
-                        <p className="text-lg text-gray-700 bg-yellow-50 p-4 rounded-lg">{wordProblem}</p>
+                    <section id="problems" className="p-8 border-4 border-pink-200 rounded">
+                        <h2 className="text-4xl font-semibold text-pink-200 mb-4 underline">Problems</h2>
+                        <p className="text-lg text-gray-700">{wordProblem}</p>
                     </section>
                 )}
-
-                {/* Related Calculators */}
-                <section id="related">
-                    <h2 className="text-3xl font-semibold text-gray-800 mb-4">Related Calculators</h2>
-                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        {relatedCalculators.map((calc, index) => (
-                            <li key={index} className="bg-blue-50 p-4 rounded-lg text-blue-700 hover:bg-blue-100 transition duration-200">
-                                <a href={calc.path} className="block text-lg font-medium">{calc.label}</a>
-                            </li>
-                        ))}
-                    </ul>
-                </section>
             </main>
         </div>
     );

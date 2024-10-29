@@ -22,7 +22,7 @@ const Calculator = ({ calcType, condensed }) => {
 
     return (
         <div className={`flex flex-col justify-center items-center bg-${calcInfo.color}-200 text-center p-4 space-y-2 rounded ${condensed ? 'h-[60px] w-[300px]' : 'h-[310px] w-[300px]'}`}>
-            <Link to={`/calculator/${calcType}`} className="text-xl tracking-wide hover:scale-105 hover:underline transition-all duration-300 mb-6">
+            <Link to={`/calculator/${calcType}`} className="text-xl tracking-wide hover:scale-105 hover:underline transition-all duration-300">
                 {calcInfo.label}
             </Link>
 
