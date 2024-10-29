@@ -23,7 +23,8 @@ const App = () => {
             <>
               <Filter onSelectCategory={setSelectedCategory} />
               <List selectedCategory={selectedCategory} />
-              <Content/>
+              <Content />
+              <Glossary/>
             </>
             } />
           {calculatorRoutes.map(({ path, calcType }) => (
@@ -34,8 +35,6 @@ const App = () => {
               />
           ))}
         </Routes>
-
-        <Glossary/>
         
         <Footer />
         

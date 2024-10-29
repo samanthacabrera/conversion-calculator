@@ -21,34 +21,8 @@ const Glossary = () => {
     );
 
 
-    const relatedCalculators = currentCategory ? 
-        Object.entries(calcData[currentCategory]).map(([key, value]) => ({
-            calcType: key,
-            label: value.label,
-            path: calculatorRoutes.find(route => route.calcType === key)?.path || '#',
-        }))
-        : [];
-
     return (
         <div className="w-2/3">
-
-            {currentCalcType && (
-                <div className="my-12 w-full">
-                    <h3 className="text-2xl tracking-wide mb-4">Glossary of Related Calculators</h3>
-                    <ul className="flex flex-col gap-2">
-                        {relatedCalculators.map(({ calcType, label, path }) => (
-                            <li key={calcType}  className="hover:-translate-y-1 hover:underline transition-all duration-200">
-                                <a 
-                                    href={path} 
-                                >
-                                    {label}
-                                </a>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            )}
-
             <h3 className="text-2xl tracking-wide mb-4">Glossary of All Calculators</h3>
             <ul className="flex flex-col gap-2">
                 {glossary.map(({ calcType, label, path }) => (

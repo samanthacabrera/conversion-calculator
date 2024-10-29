@@ -40,7 +40,7 @@ const Content = () => {
                 </p>
             </section>
 
-            <section className="my-6 py-12 space-y-4">
+            <section className="my-6 py-12 border-b border-gray-300 space-y-4">
                 <h3 className="text-2xl mb-4">Educational Resources</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">At Calcalooza, we encourage our users to utilize our tools for learning and growth. To support this, we have compiled a variety of educational resources tailored to different skill levels and needs.</p>
                 <p className="text-lg text-gray-700 leading-relaxed">We recommend exploring the following educational resources:</p>

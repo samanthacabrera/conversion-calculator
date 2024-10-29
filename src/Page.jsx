@@ -37,7 +37,7 @@ const Page = ({ calcType }) => {
             <nav className="p-8">
                 <h2 className="text-xl font-semibold">Contents</h2>
                 <div className="flex flex-col space-y-1 mt-2">
-                    {["Introduction", "Calculator", "Formula", "Steps", "Definitions", "Problems"].map((item, index) => (
+                    {["Introduction", "Calculator", "Formula", "Steps", "Definitions", "Problems", "Related Calculators"].map((item, index) => (
                         <a key={index} href={`#${item.toLowerCase().replace(" ", "")}`} className="text-gray-600 hover:text-lime-400 transition duration-200">
                             {item}
                         </a>
@@ -46,22 +46,22 @@ const Page = ({ calcType }) => {
             </nav>
 
             {/* Main Content */}
-            <main className="mt-6 space-y-12">
+            <main className="space-y-12">
                 {/* Title */}
-                <section id="introduction" className="p-8">
+                <section id="introduction" className="p-4">
                     <h1 className="text-5xl font-bold text-gray-800 mb-4">{title}</h1>
                     <p className="text-lg text-gray-700 leading-relaxed">{intro}</p>
                 </section>
 
                 {/* Calculator Component */}
-                <section id="calculator" className="p-8">
+                <section id="calculator" className="p-4">
                     <Calculator calcType={calcType} />
                 </section>
 
                 {/* Formula */}
                 {formula && (
-                    <section id="formula" className="p-8 border-4 border-lime-200 rounded">
-                        <h2 className="text-4xl font-semibold text-lime-200 mb-4 underline">Formula</h2>
+                    <section id="formula" className="p-4">
+                        <h2 className="text-4xl font-semibold text-sky-300 mb-8 underline">Formula</h2>
                         <div className="flex flex-row items-center md:space-x-4">
                             <p className="text-lg bg-gray-100 py-4 px-12 rounded-lg font-mono w-auto">{formula}</p>
     
@@ -82,8 +82,8 @@ const Page = ({ calcType }) => {
 
                 {/* Step-by-Step Guide */}
                 {steps && (
-                    <section id="steps" className="p-8 border-4 border-sky-200 rounded">
-                        <h2 className="text-4xl font-semibold text-sky-200 mb-4 underline">Step-by-Step Guide</h2>
+                    <section id="steps" className="p-4">
+                        <h2 className="text-4xl font-semibold text-pink-300 mb-8 underline">Step-by-Step Guide</h2>
                         <ol className="list-decimal list-inside space-y-4">
                             {steps.map((step, index) => (
                                 <li key={index} className="text-lg text-gray-700">{step}</li>
@@ -94,8 +94,8 @@ const Page = ({ calcType }) => {
 
                 {/* Definitions */}
                 {dimensions && dimensions.length > 0 && (
-                    <section id="definitions" className="p-8 border-4 border-orange-200 rounded">
-                        <h2 className="text-4xl font-semibold text-orange-200 mb-4 underline">Definitions</h2>
+                    <section id="definitions" className="p-4">
+                        <h2 className="text-4xl font-semibold text-orange-300 mb-8 underline">Definitions</h2>
                         <div className="space-y-4">
                             {dimensions.map((dimension, index) => (
                                 <div key={index} className="p-2">
@@ -108,9 +108,27 @@ const Page = ({ calcType }) => {
 
                 {/* Example Problem */}
                 {wordProblem && (
-                    <section id="problems" className="p-8 border-4 border-pink-200 rounded">
-                        <h2 className="text-4xl font-semibold text-pink-200 mb-4 underline">Problems</h2>
+                    <section id="problems" className="p-4">
+                        <h2 className="text-4xl font-semibold text-lime-300 mb-8 underline">Problems</h2>
                         <p className="text-lg text-gray-700">{wordProblem}</p>
+                    </section>
+                )}
+
+                {/* Related Calculators */}
+                {relatedCalculators.length > 0 && (
+                    <section id="relatedcalculators" className="p-4">
+                        <h2 className="text-4xl font-semibold text-purple-300 mb-8 underline">Related Calculators</h2>
+                        <div className="grid grid-cols-2 gap-4">
+                            {relatedCalculators.map(calculator => (
+                                <button 
+                                    key={calculator.calcType}
+                                    onClick={() => window.location.href = calculator.path} 
+                                    className="py-2 px-4 border border-purple-100 bg-purple-50 text-gray-700 hover:scale-105 text-left rounded transition duration-200"
+                                >
+                                    {calculator.label}
+                                </button>
+                            ))} 
+                        </div>
                     </section>
                 )}
             </main>
