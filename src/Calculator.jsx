@@ -31,10 +31,10 @@ const Calculator = ({ calcType, condensed }) => {
                     <div className="flex flex-col justify-center space-y-2 min-h-[150px]">
                         {calcInfo.dimensions.map((dim, index) => (
                             <div key={index} className="flex justify-between items-center space-x-2 w-full">
-                                <label>{dim.name}:</label> {/* Accessing dimension name */}
+                                <label>{dim.name}:</label> 
                                 <input
                                     type="number"
-                                    name={dim.name.toLowerCase().replace(" ", "_")} // Adjusting the input name for each dimension
+                                    name={dim.name.toLowerCase().replace(" ", "_")} 
                                     onChange={handleChange}
                                     className="p-2 rounded-lg border border-gray-300 w-[100px]"
                                     placeholder="1"

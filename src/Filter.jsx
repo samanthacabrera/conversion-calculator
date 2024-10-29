@@ -31,7 +31,7 @@ const Filter = ({ onSelectCategory }) => {
                     <button
                         key={category.name}
                         onClick={() => handleCategoryClick(category)}
-                        className={`transition-all duration-200 ${selectedCategory === category.name ? `${category.color} py-2 px-4 rounded` : 'hover:scale-105'}`}
+                        className={`transition-all duration-200 text-lg ${selectedCategory === category.name ? `${category.color} py-2 px-4 rounded` : 'hover:scale-105'}`}
                     >
                         {formatCategoryName(category.name)}
                     </button>
