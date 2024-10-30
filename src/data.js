@@ -121,6 +121,100 @@ export const calcData = {
             units: {},
         },
     },
+    PerimeterCalculators: {
+        perimeterCircle: {
+            calcType: "perimeterCircle",
+            label: "Circumference of a Circle",
+            color: "sky",
+            desc: "The circumference is the distance around the circle, calculated by multiplying the diameter by π.",
+            formula: "C = 2πr",
+            calculate: (radius) => 2 * Math.PI * radius,
+            steps: [
+                "Measure the radius (r) of the circle.",
+                "Write down the formula: C = 2πr.",
+                "Multiply the radius by 2 and then by π to find the circumference (C).",
+            ],
+            dimensions: [
+                { name: "Radius", definition: "The distance from the center of the circle to any point on its boundary." }
+            ],
+            wordProblem: "A circular track has a radius of 10 meters. Calculate its circumference to find the distance covered in one lap.",
+            units: {},
+        },
+        perimeterParallelogram: {
+            calcType: "perimeterParallelogram",
+            label: "Perimeter of a Parallelogram",
+            color: "orange",
+            desc: "The perimeter of a parallelogram is calculated by adding twice the base and twice the side length.",
+            formula: "P = 2(b + s)",
+            calculate: (base, side) => 2 * (base + side),
+            steps: [
+                "Measure the base (b) and side length (s) of the parallelogram.",
+                "Write down the formula: P = 2(b + s).",
+                "Add the base and side length, then multiply by 2 to get the perimeter (P).",
+            ],
+            dimensions: [
+                { name: "Base", definition: "One of the parallel sides of the parallelogram." },
+                { name: "Side", definition: "The non-parallel side length." }
+            ],
+            wordProblem: "A parallelogram has a base of 8 cm and a side length of 5 cm. Calculate its perimeter to determine the length of fencing needed.",
+            units: {},
+        },
+        perimeterRectangle: {
+            calcType: "perimeterRectangle",
+            label: "Perimeter of a Rectangle",
+            color: "pink",
+            desc: "The perimeter of a rectangle is calculated by adding twice the length and twice the width.",
+            formula: "P = 2(l + w)",
+            calculate: (length, width) => 2 * (length + width),
+            steps: [
+                "Measure the length (l) and width (w) of the rectangle.",
+                "Write down the formula: P = 2(l + w).",
+                "Add the length and width, then multiply by 2 to get the perimeter (P).",
+            ],
+            dimensions: [
+                { name: "Length", definition: "The longer side of the rectangle." },
+                { name: "Width", definition: "The shorter side of the rectangle." }
+            ],
+            wordProblem: "A rectangular garden measures 15 meters in length and 10 meters in width. Calculate its perimeter to know the amount of fencing required.",
+            units: {},
+        },
+        perimeterRhombus: {
+            calcType: "perimeterRhombus",
+            label: "Perimeter of a Rhombus",
+            color: "lime",
+            desc: "The perimeter of a rhombus is calculated by multiplying the side length by four, as all sides are equal.",
+            formula: "P = 4s",
+            calculate: (side) => 4 * side,
+            steps: [
+                "Measure the side length (s) of the rhombus.",
+                "Write down the formula: P = 4s.",
+                "Multiply the side length by 4 to get the perimeter (P).",
+            ],
+            dimensions: [
+                { name: "Side Length", definition: "The length of one of the rhombus's equal sides." }
+            ],
+            wordProblem: "A rhombus-shaped tile has a side length of 6 cm. Calculate its perimeter to determine the border required.",
+            units: {},
+        },
+        perimeterSquare: {
+            calcType: "perimeterSquare",
+            label: "Perimeter of a Square",
+            color: "purple",
+            desc: "The perimeter of a square is calculated by multiplying the side length by four, as all sides are equal.",
+            formula: "P = 4s",
+            calculate: (side) => 4 * side,
+            steps: [
+                "Measure the side length (s) of the square.",
+                "Write down the formula: P = 4s.",
+                "Multiply the side length by 4 to get the perimeter (P).",
+            ],
+            dimensions: [
+                { name: "Side Length", definition: "The length of one of the square's equal sides." }
+            ],
+            wordProblem: "A square park has a side length of 20 meters. Calculate its perimeter to determine the fencing needed.",
+            units: {},
+        },
+    },
     SurfaceAreaCalculators: {
         surfaceAreaCube: {
             calcType: "surfaceAreaCube",

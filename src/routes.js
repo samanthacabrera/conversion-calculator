@@ -6,6 +6,12 @@ export const calculatorRoutes = [
     { path: '/calculator/areaCircle', calcType: 'areaCircle' },
     { path: '/calculator/areaSector', calcType: 'areaSector' },
     { path: '/calculator/areaParallelogram', calcType: 'areaParallelogram' },
+    // Perimeter Calculators
+    { path: '/calculator/perimeterCircle', calcType: 'perimeterCircle' },
+    { path: '/calculator/perimeterParallelogram', calcType: 'perimeterParallelogram' },
+    { path: '/calculator/perimeterRectangle', calcType: 'perimeterRectangle' },
+    { path: '/calculator/perimeterRhombus', calcType: 'perimeterRhombus' },
+    { path: '/calculator/perimeterSquare', calcType: 'perimeterSquare' },
     // Surface Area Calculators
     { path: '/calculator/surfaceAreaSphere', calcType: 'surfaceAreaSphere' },
     { path: '/calculator/surfaceAreaCone', calcType: 'surfaceAreaCone' },
