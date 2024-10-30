@@ -9,7 +9,7 @@ const Filter = ({ onSelectCategory }) => {
         { name: 'PerimeterCalculators', color: 'bg-orange-200' },
         { name: 'SurfaceAreaCalculators', color: 'bg-yellow-200' },
         { name: 'VolumeCalculators', color: 'bg-sky-200' },
-         // { name: '', color: 'bg-yellow-200' },
+         // { name: '', color: 'bg-purple-200' },
     ];
     
     const [selectedCategory, setSelectedCategory] = useState(categories[0].name);
