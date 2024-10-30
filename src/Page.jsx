@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { calcData } from './data';
 import { calculatorRoutes } from './routes';
 import Calculator from './Calculator';
@@ -21,6 +22,12 @@ const Page = ({ calcType }) => {
         label: value.label,
         path: calculatorRoutes.find(route => route.calcType === key)?.path || '#',
     }));
+
+    const handleScrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+        });
+    };
 
     const copyToClipboard = () => {
         navigator.clipboard.writeText(formula).then(() => {
@@ -120,14 +127,15 @@ const Page = ({ calcType }) => {
                         <h2 className="text-4xl mb-8 font-semibold group-hover:text-purple-300 transition duration-500">Related Calculators</h2>
                         <div className="grid grid-cols-2 gap-4">
                             {relatedCalculators.map(calculator => (
-                                <button 
+                                <Link 
                                     key={calculator.calcType}
-                                    onClick={() => window.location.href = calculator.path} 
-                                    className="py-2 px-4 border border-gray-200  text-gray-700 hover:text-sky-400 text-left rounded transition duration-200"
+                                    to={calculator.path} 
+                                    onClick={handleScrollToTop}
+                                    className="py-2 px-4 border border-gray-200 text-gray-700 hover:text-sky-400 text-left rounded transition duration-200"
                                 >
                                     {calculator.label}
-                                </button>
-                            ))} 
+                                </Link>
+                            ))}
                         </div>
                     </section>
                 )}

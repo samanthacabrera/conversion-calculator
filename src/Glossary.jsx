@@ -1,13 +1,9 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom'; 
+import { Link } from 'react-router-dom'; 
 import { calcData } from './data';
 import { calculatorRoutes } from './routes'; 
 
 const Glossary = () => {
-    const location = useLocation(); 
-    const currentPath = location.pathname; 
-    const currentCalcType = calculatorRoutes.find(route => currentPath.includes(route.path))?.calcType;
-
     const glossary = Object.keys(calcData).flatMap(category => 
         Object.entries(calcData[category]).map(([key, value]) => ({
             calcType: key,
@@ -16,10 +12,11 @@ const Glossary = () => {
         }))
     );
 
-    const currentCategory = Object.keys(calcData).find(cat => 
-        calcData[cat][currentCalcType]
-    );
-
+    const handleScrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+        });
+    };
 
     return (
         <div className="w-2/3">
@@ -27,15 +24,12 @@ const Glossary = () => {
             <ul className="flex flex-col gap-2">
                 {glossary.map(({ calcType, label, path }) => (
                     <li key={calcType} className="hover:-translate-y-1 hover:underline transition-all duration-200">
-                        <a 
-                            href={path} 
-                        >
+                        <Link to={path} onClick={handleScrollToTop}>
                             {label}
-                        </a>
+                        </Link>
                     </li>
                 ))}
             </ul>
-        
         </div>
     );
 };
