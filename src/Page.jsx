@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { calcData } from './data';
 import { calculatorRoutes } from './routes';
 import Calculator from './Calculator';
+import Lesson from './Lesson';
 
 const Page = ({ calcType }) => {
     const [copySuccess, setCopySuccess] = useState('');
@@ -68,7 +69,7 @@ const Page = ({ calcType }) => {
                 {/* Formula */}
                 {formula && (
                     <section id="formula" className="group p-4">
-                        <h2 className="text-4xl mb-8 font-semibold group-hover:text-sky-300 transition duration-500">Formula</h2>
+                        <h2 className="text-2xl mb-8 font-semibold group-hover:text-sky-300 transition duration-500">Formula</h2>
                         <div className="flex flex-row items-center md:space-x-4">
                             <p className="text-lg bg-gray-100 py-4 px-12 rounded-lg font-mono w-auto">{formula}</p>
     
@@ -90,7 +91,7 @@ const Page = ({ calcType }) => {
                 {/* Step-by-Step Guide */}
                 {steps && (
                     <section id="steps" className="group p-4">
-                        <h2 className="text-4xl mb-8 font-semibold group-hover:text-pink-300 transition duration-500">Step-by-Step Guide</h2>
+                        <h2 className="text-2xl mb-8 font-semibold group-hover:text-pink-300 transition duration-500">Step-by-Step Guide</h2>
                         <ol className="list-decimal list-inside space-y-4">
                             {steps.map((step, index) => (
                                 <li key={index} className="text-lg text-gray-700">{step}</li>
@@ -102,7 +103,7 @@ const Page = ({ calcType }) => {
                 {/* Definitions */}
                 {dimensions && dimensions.length > 0 && (
                     <section id="definitions" className="group p-4">
-                        <h2 className="text-4xl mb-8 font-semibold group-hover:text-orange-300 transition duration-500">Definitions</h2>
+                        <h2 className="text-2xl mb-8 font-semibold group-hover:text-orange-300 transition duration-500">Definitions</h2>
                         <div className="space-y-4">
                             {dimensions.map((dimension, index) => (
                                 <div key={index} className="p-2">
@@ -116,15 +117,17 @@ const Page = ({ calcType }) => {
                 {/* Example Problem */}
                 {wordProblem && (
                     <section id="problems" className="group p-4">
-                        <h2 className="text-4xl mb-8 font-semibold group-hover:text-lime-300 transition duration-500">Problems</h2>
+                        <h2 className="text-2xl mb-8 font-semibold group-hover:text-lime-300 transition duration-500">Problems</h2>
                         <p className="text-lg text-gray-700">{wordProblem}</p>
                     </section>
                 )}
 
+                <Lesson calcType={calcType}/>
+
                 {/* Related Calculators */}
                 {relatedCalculators.length > 0 && (
                     <section id="relatedcalculators" className="group p-4">
-                        <h2 className="text-4xl mb-8 font-semibold group-hover:text-purple-300 transition duration-500">Related Calculators</h2>
+                        <h2 className="text-2xl mb-8 font-semibold group-hover:text-purple-300 transition duration-500">Related Calculators</h2>
                         <div className="grid grid-cols-2 gap-4">
                             {relatedCalculators.map(calculator => (
                                 <Link 
