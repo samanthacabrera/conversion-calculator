@@ -50,10 +50,9 @@ const Lesson = ({ calcType }) => {
         importance,
         history,
         formulas,
-        realLifeApplications,
-        realWorldScenario,
         keyTakeaways,
         glossary,
+        funFact,
     } = currentLesson;
 
     return (
@@ -88,10 +87,10 @@ const Lesson = ({ calcType }) => {
                 </ul>
             </section>
 
-            {/* Real-Life Applications */}
-            <section id="real-life-applications" className="group p-4">
-                <h3 className="text-2xl mb-8 font-semibold group-hover:text-lime-300 transition duration-500">Real-Life Applications</h3>
-                <p className="text-gray-700">{realLifeApplications}</p>
+            {/* Fun Facts */}
+            <section id="fun-facts" className="group p-4">
+                <h3 className="text-2xl mb-8 font-semibold group-hover:text-lime-300 transition duration-500">Fun Fact</h3>
+                <p className="text-gray-700">{funFact}</p>
             </section>
 
             {/* Key Takeaways */}
