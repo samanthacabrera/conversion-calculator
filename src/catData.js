@@ -12,14 +12,14 @@ const catData = {
             { shape: "Ellipse", formula: "A = πab", explanation: "Pi times the semi-major axis times the semi-minor axis." },
         ],
         realLifeApplications: "Calculating land area for agriculture helps farmers know how much seed to plant. In construction, understanding floor space is vital for planning layouts. When building homes, architects calculate area to ensure rooms are usable and meet safety regulations. Additionally, businesses determine the area of retail spaces to optimize product placement and customer flow. Even when you’re gardening, knowing how much area your plants will occupy can help you create a beautiful garden.",
-        funFact: "Did you know that the area of the largest rectangular garden ever recorded was about 27,700 square meters? That's the size of almost four football fields combined!",
+        funFact: "The Great Wall of China stretches over 13,000 miles, making it the largest man-made structure on Earth. If you calculated the area of all the bricks used to build it, it would cover a space larger than the entire country of Italy!",
         keyTakeaways: [
             "Area is a two-dimensional measurement.",
             "Different shapes have different formulas for area calculation.",
             "Area is applicable in real life, from landscaping to designing buildings."
         ],
         glossary: {
-            "Area": "The extent of a two-dimensional surface enclosed within a boundary.",
+            // "Area": "The extent of a two-dimensional surface enclosed within a boundary.",
             "Square Units": "The units used to measure area, such as square meters or square feet.",
         },
     },
@@ -34,14 +34,14 @@ const catData = {
             { shape: "Circle", formula: "P = 2πr", explanation: "Two times pi times the radius." },
         ],
         realLifeApplications: "When planning a garden, knowing the perimeter helps you calculate how much fencing you need to enclose the space. In sports, such as track and field, the perimeter of the track determines how far athletes will run. Similarly, in construction, measuring the perimeter of a room helps builders determine how much flooring or trim is required.",
-        funFact: "In ancient Egypt, surveyors used ropes knotted at regular intervals to measure the perimeter of land, a method that led to the term 'rope measure' still used today!",
+        funFact: "The perimeter of a circle is called its circumference. Interestingly, no matter how large or small a circle is, the ratio of its circumference to its diameter is always the same and is represented by the number π (pi), approximately 3.14!",
         keyTakeaways: [
             "Perimeter is a linear measurement.",
             "Each shape has a unique formula for its perimeter.",
             "Perimeter is relevant in planning and construction."
         ],
         glossary: {
-            "Perimeter": "The total length of the boundaries of a two-dimensional shape.",
+            // "Perimeter": "The total length of the boundaries of a two-dimensional shape.",
             "Linear Units": "The units used to measure perimeter, such as meters or feet.",
         },
     },
@@ -56,14 +56,14 @@ const catData = {
             { shape: "Cylinder", formula: "SA = 2πr(h + r)", explanation: "Two pi times radius times height plus the area of the top and bottom." },
         ],
         realLifeApplications: "Surface area calculations are vital when designing products, as companies need to know how much paint, coating, or wrapping is necessary. In construction, knowing the surface area of walls can help determine how much insulation is needed. Additionally, in the food industry, surface area plays a role in cooking, as larger surfaces allow for faster cooking times.",
-        funFact: "The surface area of a sphere increases with the square of its radius, meaning a tiny increase in radius can lead to a huge increase in surface area. This property is essential in fields like meteorology and environmental science!",
+        funFact: "The surface area of a human brain is estimated to be around 1.5 square meters (or about 16 square feet) when unfolded! This large surface area allows for many folds and grooves, which help increase the brain's processing power.",
         keyTakeaways: [
             "Surface area measures the total area that the surface of a 3D object occupies.",
             "Different 3D shapes have unique formulas for calculating surface area.",
             "Surface area is significant in engineering and product design."
         ],
         glossary: {
-            "Surface Area": "The total area of the exterior surface of a three-dimensional object.",
+            // "Surface Area": "The total area of the exterior surface of a three-dimensional object.",
             "Three-Dimensional": "An object that has width, height, and depth.",
         },
     },
@@ -78,14 +78,14 @@ const catData = {
             { shape: "Sphere", formula: "V = 4/3πr³", explanation: "Four-thirds times pi times the cube of the radius." },
         ],
         realLifeApplications: "Volume calculations are essential for various applications, such as measuring how much paint is needed for a room, determining the capacity of containers, and calculating how much soil is needed for a garden bed. In cooking, volume measurements ensure you have the right amount of ingredients for recipes.",
-        funFact: "The largest container ship in the world can hold up to 24,000 twenty-foot equivalent units (TEU) of cargo, which is equivalent to the volume of a small city!",
+        funFact: "A single teaspoon of honey is approximately 5 milliliters in volume, but it takes the nectar from about 2 million flowers to produce just that one teaspoon! This showcases the incredible effort bees put into creating honey.",
         keyTakeaways: [
             "Volume is a three-dimensional measurement.",
             "Each shape has its own formula for volume calculation.",
             "Volume is essential in many fields, including science and engineering."
         ],
         glossary: {
-            "Volume": "The amount of space an object occupies.",
+            // "Volume": "The amount of space an object occupies.",
             "Cubic Units": "The units used to measure volume, such as cubic meters or liters.",
         },
     },
