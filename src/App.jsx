@@ -8,6 +8,7 @@ import Page from './Page';
 import Glossary from './Glossary';
 import Footer from './Footer';
 import Content from './Content';
+import Search from './Search';
 
 const App = () => {
   const [selectedCategory, setSelectedCategory] = useState('AllCalculators');
@@ -17,6 +18,7 @@ const App = () => {
       <div className="flex flex-col items-center min-h-screen text-gray-800">
         
         <Header />
+        <Search/>
 
         <Routes>
           <Route path="/" element={

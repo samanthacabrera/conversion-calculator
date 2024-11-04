@@ -24,7 +24,7 @@ const Header = () => {
                         key={index} 
                         className={`group relative w-full md:h-[200px] p-4 border border-black text-black transition-all duration-300 hover:bg-black hover:text-white hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] ${backgroundColors[index % backgroundColors.length]}`}
                     >
-                        <Link to="/" className="w-full h-full flex flex-col justify-between items-start">
+                        <Link to="/" className="w-full h-full flex flex-col items-start">
                             <h2 className="text-3xl font-bold tracking-tighter mb-3 group-hover:underline decoration-dotted decoration-2 underline-offset-4">
                                 {concept}
                             </h2>
