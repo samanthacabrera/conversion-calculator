@@ -23,6 +23,27 @@ const catData = {
             "Square Units": "The units used to measure area, such as square meters or square feet.",
         },
     },
+    distance: {
+        title: "Distance",
+        definition: "Distance measures how far apart two points are, either in a straight line or along a path.",
+        importance: "Understanding distance is vital in daily life, whether calculating how far to travel for a road trip or determining how far apart objects are in space. In fields like engineering, distance calculations help in designing structures and ensuring they fit properly in a given space. Distance measurements are also essential in sports, navigation, and many scientific disciplines.",
+        history: "The concept of distance has been recognized since ancient times, as people needed to measure the space between locations. Ancient Egyptians and Greeks used various methods to estimate distances for trade routes, land surveys, and building projects. The Greeks were particularly interested in the mathematical properties of distance, leading to the development of geometric principles.\n\nEuclidean geometry, established by the mathematician Euclid, introduced concepts of distance that laid the foundation for modern mathematics. The Pythagorean theorem, developed by Pythagoras, provided a way to calculate the distance between points in a two-dimensional plane. This theorem remains a fundamental concept in mathematics today, helping to understand distances in various contexts.\n\nAs time progressed, the study of distance expanded. In the 17th century, mathematicians began to develop more advanced concepts related to distance in three-dimensional space. The invention of the Cartesian coordinate system by René Descartes allowed for precise calculations of distances between points using coordinates. This advancement opened the door to modern mathematics, physics, and engineering.\n\nToday, distance is measured in various units, such as meters, kilometers, and miles. It is a crucial concept in many fields, including geography, physics, and engineering. With the advent of technology, distance calculations have become more precise and accessible, allowing for accurate measurements in everyday life.",
+        formulas: [
+            { shape: "Distance between two points", formula: "d = √((x₂ - x₁)² + (y₂ - y₁)²)", explanation: "The distance between two points in a plane." },
+            { shape: "Distance traveled over time", formula: "d = rt", explanation: "Distance equals rate times time." },
+        ],
+        realLifeApplications: "Distance measurements are crucial for navigation, whether using maps or GPS technology. In construction, knowing distances between structures ensures proper spacing and alignment. Athletes use distance calculations in sports like running, where measuring distances helps them set personal records and improve performance.",
+        funFact: "The distance light travels in one year is called a light-year, which is about 5.88 trillion miles! This vast measurement is used in astronomy to describe distances between stars and galaxies.",
+        keyTakeaways: [
+            "Distance is a fundamental measurement in mathematics and everyday life.",
+            "Different contexts use various units to measure distance.",
+            "Understanding distance is crucial for navigation, construction, and science."
+        ],
+        glossary: {
+            // "Distance": "The amount of space between two points.",
+            "Kilometer": "A unit of distance equal to 1,000 meters.",
+        },
+    },
     perimeter: {
         title: "Perimeter",
         definition: "Perimeter is the total distance around a shape.",

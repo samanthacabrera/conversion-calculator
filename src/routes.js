@@ -9,6 +9,10 @@ export const calculatorRoutes = [
     { path: '/calculator/areaRhombus', calcType: 'areaRhombus' },
     { path: '/calculator/areaSquare', calcType: 'areaSquare' },
     { path: '/calculator/areaEllipse', calcType: 'areaEllipse' },
+    // Distance Calculators
+    { path: '/calculator/distance2D', calcType: 'distance2D' },
+    { path: '/calculator/distanceMidpoint', calcType: 'distanceMidpoint' },
+    { path: '/calculator/distanceSlope', calcType: 'distanceSlope' },
     // Perimeter Calculators
     { path: '/calculator/perimeterTriangle', calcType: 'perimeterTriangle' },
     { path: '/calculator/perimeterCircle', calcType: 'perimeterCircle' },

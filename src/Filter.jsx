@@ -6,10 +6,10 @@ const Filter = ({ onSelectCategory }) => {
        
         { name: 'AllCalculators', color: 'bg-lime-200' },
         { name: 'AreaCalculators', color: 'bg-pink-200' },
+        { name: 'DistanceCalculators', color: 'bg-yellow-200' },
         { name: 'PerimeterCalculators', color: 'bg-orange-200' },
-        { name: 'SurfaceAreaCalculators', color: 'bg-yellow-200' },
+        { name: 'SurfaceAreaCalculators', color: 'bg-purple-200' },
         { name: 'VolumeCalculators', color: 'bg-sky-200' },
-         // { name: '', color: 'bg-purple-200' },
     ];
     
     const [selectedCategory, setSelectedCategory] = useState(categories[0].name);
@@ -26,7 +26,7 @@ const Filter = ({ onSelectCategory }) => {
     };
 
     return (
-        <div className="flex justify-center w-full mt-12">
+        <div className="flex justify-center w-full max-w-4xl mt-20">
             <div className="flex flex-col space-y-1 md:flex-row md:space-x-8">
                 {categories.map((category) => (
                     <button

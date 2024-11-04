@@ -18,7 +18,7 @@ const Header = () => {
                 Bookmark us for quick access and explore our wide range of tools below.
             </p>
 
-            <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl px-4">
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl px-16">
                 {['Basic Math', 'Algebra', 'Geometry'].map((concept, index) => (
                     <div 
                         key={index} 

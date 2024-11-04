@@ -181,6 +181,90 @@ export const calcData = {
             units: {},
         },
     },
+    DistanceCalculators: {
+        distance2D: {
+            calcType: 'distance2D',
+            label: '2D Distance Calculator',
+            color: 'sky',
+            desc: 'Calculates the distance between two points in a two-dimensional space using the distance formula.',
+            formula: 'd = √((x₂ - x₁)² + (y₂ - y₁)²)',
+            calculate: (x1, y1, x2, y2) => {
+                return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+            },
+            steps: [
+                "Identify the coordinates of the two points: (x₁, y₁) and (x₂, y₂).",
+                "Write down the formula: d = √((x₂ - x₁)² + (y₂ - y₁)²).",
+                "Subtract x₁ from x₂ and y₁ from y₂.",
+                "Square the results of these subtractions.",
+                "Add the squared results together.",
+                "Take the square root of the sum to find the distance (d)."
+            ],
+            dimensions: [
+                { name: "x₁", definition: "The x-coordinate of the first point." },
+                { name: "y₁", definition: "The y-coordinate of the first point." },
+                { name: "x₂", definition: "The x-coordinate of the second point." },
+                { name: "y₂", definition: "The y-coordinate of the second point." }
+            ],
+            wordProblem: "What is the distance between the points (3, 4) and (7, 1)?",
+            units: { distance: 'units' },
+        },
+
+        distanceMidpoint: {
+            calcType: 'distanceMidpoint',
+            label: 'Midpoint Calculator',
+            color: 'lime',
+            desc: 'Calculates the midpoint of a line segment defined by two endpoints.',
+            formula: 'M = ((x₁ + x₂) / 2, (y₁ + y₂) / 2)',
+            calculate: (x1, y1, x2, y2) => {
+                return `(${(x1 + x2) / 2}, ${(y1 + y2) / 2})`;
+            },
+            steps: [
+                "Identify the coordinates of the two endpoints: (x₁, y₁) and (x₂, y₂).",
+                "Write down the formula: M = ((x₁ + x₂) / 2, (y₁ + y₂) / 2).",
+                "Add the x-coordinates together and divide by 2 to get the x-coordinate of the midpoint.",
+                "Add the y-coordinates together and divide by 2 to get the y-coordinate of the midpoint.",
+                "Combine the results to find the midpoint."
+            ],
+            dimensions: [
+                { name: "x₁", definition: "The x-coordinate of the first endpoint." },
+                { name: "y₁", definition: "The y-coordinate of the first endpoint." },
+                { name: "x₂", definition: "The x-coordinate of the second endpoint." },
+                { name: "y₂", definition: "The y-coordinate of the second endpoint." }
+            ],
+            wordProblem: "Find the midpoint between the points (2, 3) and (4, 7).",
+            units: { midpoint: 'units' },
+        },
+
+        distanceSlope: {
+            calcType: 'distanceSlope',
+            label: 'Slope Calculator',
+            color: 'orange',
+            desc: 'Calculates the slope of a line given two points.',
+            formula: 'm = (y₂ - y₁) / (x₂ - x₁)',
+            calculate: (x1, y1, x2, y2) => {
+                if (x2 - x1 === 0) {
+                    return 'Undefined (vertical line)';
+                }
+                return (y2 - y1) / (x2 - x1);
+            },
+            steps: [
+                "Identify the coordinates of the two points: (x₁, y₁) and (x₂, y₂).",
+                "Write down the formula: m = (y₂ - y₁) / (x₂ - x₁).",
+                "Subtract y₁ from y₂ to find the change in y.",
+                "Subtract x₁ from x₂ to find the change in x.",
+                "Divide the change in y by the change in x to find the slope (m).",
+                "If the change in x is zero, the slope is undefined (the line is vertical)."
+            ],
+            dimensions: [
+                { name: "x₁", definition: "The x-coordinate of the first point." },
+                { name: "y₁", definition: "The y-coordinate of the first point." },
+                { name: "x₂", definition: "The x-coordinate of the second point." },
+                { name: "y₂", definition: "The y-coordinate of the second point." }
+            ],
+            wordProblem: "Calculate the slope between the points (1, 2) and (4, 6).",
+            units: { slope: 'units/unit' },
+        },
+    },
     PerimeterCalculators: {
         perimeterCircle: {
             calcType: "perimeterCircle",
@@ -736,5 +820,4 @@ export const calcData = {
             units: {},
         },
     },
-
 };
