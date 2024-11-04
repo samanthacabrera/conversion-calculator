@@ -20,7 +20,7 @@ const Glossary = () => {
 
     return (
         <div className="w-2/3">
-            <h3 className="text-2xl tracking-wide mb-4">Glossary of All Calculators</h3>
+            <h3 className="text-2xl font-bold tracking-tighter mb-4">Glossary of All Calculators</h3>
             <ul className="flex flex-col gap-2">
                 {glossary.map(({ calcType, label, path }) => (
                     <li key={calcType} className="hover:-translate-y-1 hover:underline transition-all duration-200">

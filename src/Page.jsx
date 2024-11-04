@@ -54,7 +54,7 @@ const Page = ({ calcType }) => {
             </nav>
 
             {/* Main Content */}
-            <main className="space-y-12">
+            <main className="space-y-6">
                 {/* Title */}
                 <section id="introduction" className="group p-4">
                     <h1 className="text-5xl mb-4 font-bold group-hover:text-orange-300 transition duration-500">{title}</h1>

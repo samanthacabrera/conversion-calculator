@@ -56,7 +56,7 @@ const Lesson = ({ calcType }) => {
     } = currentLesson;
 
     return (
-        <div className="space-y-12 text-lg">
+        <div className="space-y-6 text-lg">
             {/* Category Overview */}
             <section id="importance" className="px-4">
                 <h2 className="text-5xl mb-4 font-semibold">Overview of {title}</h2>

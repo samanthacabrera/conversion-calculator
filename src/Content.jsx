@@ -5,7 +5,7 @@ const Content = () => {
         <div className="w-2/3 py-12">
 
             <section className="my-6 py-12 border-b border-gray-300">
-                <h3 className="text-2xl mb-4">Frequently Asked Questions</h3>
+                <h3 className="text-2xl font-bold tracking-tighter mb-4">Frequently Asked Questions</h3>
                 <div className="text-lg space-y-4">
                     <h4 className="text-xl">What is Calcalooza?</h4>
                     <p className="pl-6 text-gray-700">Calcalooza is an online calculator platform designed to simplify various calculations. Our user-friendly interface features multiple calculators designed to make calculations easy and accessible.</p>
@@ -21,7 +21,7 @@ const Content = () => {
             </section>
 
             <section className="my-6 py-12 border-b border-gray-300 space-y-4">
-                <h3 className="text-2xl mb-4">Understanding Calculator Precision</h3>
+                <h3 className="text-2xl font-bold tracking-tighter mb-4">Understanding Calculator Precision</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
                     Calcalooza’s calculators are designed to balance readability with accuracy, using rounding to avoid overly complex decimal results. However, it’s important to understand how rounding can impact certain types of calculations.
                 </p>
@@ -31,7 +31,7 @@ const Content = () => {
             </section>
 
             <section className="my-6 py-12 border-b border-gray-300 space-y-4">
-                <h3 className="text-2xl mb-4">Upcoming Features</h3>
+                <h3 className="text-2xl font-bold tracking-tighter mb-4">Upcoming Features</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
                     One of our most anticipated features is the <strong>Distance Calculators</strong>. For 2D space, users can easily input the coordinates of two points on a Cartesian plane, and the calculator will utilize the distance formula to provide an accurate measurement of the straight-line distance between them. Users will also be able to find distances between points in three-dimensional space.
                 </p>
@@ -41,7 +41,7 @@ const Content = () => {
             </section>
 
             <section className="my-6 py-12 border-b border-gray-300 space-y-4">
-                <h3 className="text-2xl mb-4">Educational Resources</h3>
+                <h3 className="text-2xl font-bold tracking-tighter mb-4">Educational Resources</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">At Calcalooza, we encourage our users to utilize our tools for learning and growth. To support this, we have compiled a variety of educational resources tailored to different skill levels and needs.</p>
                 <p className="text-lg text-gray-700 leading-relaxed">We recommend exploring the following educational resources:</p>
                 <ul className="list-disc ml-8 space-y-2 mt-4 text-lg text-gray-700 leading-relaxed">
