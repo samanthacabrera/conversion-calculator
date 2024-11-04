@@ -39,9 +39,9 @@ const List = ({ selectedCategory }) => {
     
 
             {/* mobile */}
-            <div className={`flex flex-col items-center mt-2 space-y-4 lg:hidden`}>
+            <div className={`flex flex-col mt-12 items-center space-y-4 lg:hidden`}>
                 {filteredCalcs.length > 0 ? filteredCalcs.map((calc, index) => (
-                    <div key={calc.calcType + index} className="w-full border-2 border-white rounded-md">
+                    <div key={calc.calcType + index} className="w-full border border-black rounded-md">
                         <Calculator calcType={calc.calcType} condensed={isCondensed} />
                     </div>
                 )) : (
@@ -52,7 +52,7 @@ const List = ({ selectedCategory }) => {
             {/* desktop */}
             <div className="hidden lg:grid lg:grid-cols-3 lg:gap-8 lg:p-12 lg:mt-6">
                 {filteredCalcs.length > 0 ? filteredCalcs.map((calc, index) => (
-                    <div key={calc.calcType} className="w-full border-2 border-white rounded-md">
+                    <div key={calc.calcType} className="w-full border border-black rounded-md">
                         <Calculator calcType={calc.calcType} condensed={isCondensed} />
                     </div>
                 )) : (

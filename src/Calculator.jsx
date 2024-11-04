@@ -31,13 +31,13 @@ const Calculator = ({ calcType, condensed }) => {
             <Link
                 to={`/calculator/${calcType}`}
                 onClick={handleScrollToTop}
-                className="text-xl tracking-wide hover:scale-105 hover:underline transition-all duration-300">
+                className="text-xl font-bold tracking-tighter mb-3 hover:underline decoration-dotted decoration-2 underline-offset-4">
                 {calcInfo.label}
             </Link>
 
             {!condensed && (
                 <>
-                    <div className="flex flex-col justify-center space-y-2 min-h-[150px]">
+                    <div className="flex flex-col justify-center space-y-2 min-h-[150px] font-mono">
                         {calcInfo.dimensions.map((dim, index) => (
                             <div key={index} className="flex justify-between items-center space-x-2 w-full">
                                 <label>{dim.name}:</label> 

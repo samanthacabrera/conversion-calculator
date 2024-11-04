@@ -40,7 +40,7 @@ const Page = ({ calcType }) => {
     };
 
     return (
-        <div className="flex flex-col max-w-3xl mx-2 md:mx-auto my-4 md:my-8 p-2 md:p-12 text-gray-600 border bg-white rounded-lg shadow-lg">
+        <div className="flex flex-col max-w-3xl mx-2 md:mx-auto my-4 md:my-8 p-2 md:p-12 border bg-white rounded-lg shadow-lg">
           
             <nav className="p-8">
                 <h2 className="text-xl font-semibold">Contents</h2>

@@ -26,15 +26,15 @@ const Filter = ({ onSelectCategory }) => {
     };
 
     return (
-        <div className="flex justify-center w-full my-6">
+        <div className="flex justify-center w-full mt-12">
             <div className="flex flex-col space-y-1 md:flex-row md:space-x-8">
                 {categories.map((category) => (
                     <button
                         key={category.name}
                         onClick={() => handleCategoryClick(category)}
-                        className={`transition-all duration-200 text-lg ${selectedCategory === category.name ? `${category.color} py-2 px-4 rounded` : 'hover:scale-105'}`}
+                        className={`transition-all duration-200 text-xl tracking-tight font-bold ${selectedCategory === category.name ? `${category.color} py-2 px-4 rounded` : 'hover:scale-105'}`}
                     >
-                        {formatCategoryName(category.name)}
+                       {formatCategoryName(category.name)}
                     </button>
                 ))}
             </div>
