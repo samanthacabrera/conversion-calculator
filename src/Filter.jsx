@@ -9,7 +9,7 @@ const Filter = ({ onSelectCategory }) => {
         { name: 'AreaCalculators', color: 'bg-pink-200' },
         { name: 'DecimalCalculators', color: 'bg-lime-200' },
         { name: 'DistanceCalculators', color: 'bg-yellow-200' },
-        // { name: 'FractionCalculators', color: 'bg-lime-200' },
+        { name: 'ExponentCalculators', color: 'bg-lime-200' },
         { name: 'PercentageCalculators', color: 'bg-sky-200' },
         { name: 'PerimeterCalculators', color: 'bg-orange-200' },
         { name: 'SurfaceAreaCalculators', color: 'bg-purple-200' },
@@ -17,7 +17,7 @@ const Filter = ({ onSelectCategory }) => {
     ];
 
     const conceptToCategories = {
-        'Basic Math': ['AllCalculators', 'DecimalCalculators', 'PercentageCalculators' ],
+        'Basic Math': ['AllCalculators', 'DecimalCalculators', 'ExponentCalculators', 'PercentageCalculators' ],
         'Algebra': ['AllCalculators', 'DistanceCalculators'],
         'Geometry': ['AllCalculators', 'AreaCalculators', 'PerimeterCalculators', 'SurfaceAreaCalculators', 'VolumeCalculators'],
     };

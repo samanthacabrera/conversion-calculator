@@ -18,6 +18,12 @@ export const calculatorRoutes = [
     { path: '/calculator/distance2D', calcType: 'distance2D' },
     { path: '/calculator/distanceMidpoint', calcType: 'distanceMidpoint' },
     { path: '/calculator/distanceSlope', calcType: 'distanceSlope' },
+    // Exponent Calculators
+    { path: '/calculator/basicExponent', calcType: 'basicExponent' },
+    { path: '/calculator/fractionalExponent', calcType: 'fractionalExponent' },
+    { path: '/calculator/negativeExponent', calcType: 'negativeExponent' },
+    { path: '/calculator/squareRoot', calcType: 'squareRoot' },
+    { path: '/calculator/nthRoot', calcType: 'nthRoot' },
     // Fraction Calculators
     { path: '/calculator/addFractions', calcType: 'addFractions' },
     { path: '/calculator/subtractFractions', calcType: 'subtractFractions' },

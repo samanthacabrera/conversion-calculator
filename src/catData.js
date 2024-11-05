@@ -61,6 +61,32 @@ const catData = {
             "Kilometer": "A unit of distance equal to 1,000 meters.",
         },
     },
+    exponents: {
+        title: "Exponents",
+        definition: "An exponent indicates how many times a number, called the base, is multiplied by itself.",
+        importance: "Understanding exponents is vital in various fields, including science, engineering, and finance. They simplify the expression of large numbers, represent repeated multiplication, and are foundational in understanding concepts like growth rates and decay in natural sciences.",
+        history: "The concept of exponents has roots in ancient mathematics, with notable contributions from Indian mathematicians around the 7th century who formalized their use in calculations. European mathematicians like René Descartes popularized exponents in the 17th century, helping to establish the notation we use today. The evolution of exponents reflects broader advances in algebra and calculus, contributing to the development of scientific notation.",
+        formulas: [
+            { description: "Basic Exponent", formula: "a^b", explanation: "Where a is the base and b is the exponent." },
+            { description: "Fractional Exponent", formula: "a^(m/n)", explanation: "Where m/n is the fractional exponent representing the root." },
+            { description: "Negative Exponent", formula: "a^(-b)", explanation: "Represents the reciprocal of the base raised to the positive exponent." },
+            { description: "Square Root", formula: "√a", explanation: "Is the same as a^(1/2)." },
+            { description: "Nth Root", formula: "a^(1/n)", explanation: "Calculates the nth root of a number." }
+        ],
+        realLifeApplications: "Exponents are used in real-life scenarios such as calculating compound interest, understanding population growth, and solving exponential decay problems in radioactive decay or finance. They also play a critical role in scientific calculations and data representation, simplifying large figures in fields like physics and chemistry.",
+        funFact: "Did you know that there are more possible iterations of a game of chess than there are atoms in the observable universe? The number is roughly 10^120, far exceeding the 10^80 atoms!",
+        keyTakeaways: [
+            "Exponents represent repeated multiplication.",
+            "Understanding exponents is crucial in science, finance, and engineering.",
+            "Different exponent forms (positive, negative, fractional) have unique properties."
+        ],
+        glossary: {
+            "Base": "The number that is raised to a power.",
+            "Exponent": "Indicates how many times the base is multiplied by itself.",
+            "Square Root": "A value that, when multiplied by itself, gives the original number.",
+            "Nth Root": "A value that, when raised to the nth power, gives the original number.",
+        },
+    },
     fractions: {
         title: "Fractions",
         definition: "A fraction represents a part of a whole, consisting of a numerator (the top number) and a denominator (the bottom number).",

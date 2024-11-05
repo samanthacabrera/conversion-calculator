@@ -52,6 +52,11 @@ const lessonMapping = {
     subtractDecimals: catData.decimals,  
     multiplyDecimals: catData.decimals, 
     divideDecimals: catData.decimals,
+    basicExponent: catData.exponents,  
+    fractionalExponent: catData.exponents, 
+    negativeExponent: catData.exponents,  
+    squareRoot: catData.exponents,  
+    nthRoot: catData.exponents, 
 };
 
 const Lesson = ({ calcType }) => {
