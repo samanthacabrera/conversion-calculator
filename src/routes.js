@@ -9,10 +9,21 @@ export const calculatorRoutes = [
     { path: '/calculator/areaRhombus', calcType: 'areaRhombus' },
     { path: '/calculator/areaSquare', calcType: 'areaSquare' },
     { path: '/calculator/areaEllipse', calcType: 'areaEllipse' },
+    // Decimal Calculators
+    { path: '/calculator/addDecimals', calcType: 'addDecimals' },
+    { path: '/calculator/subtractDecimals', calcType: 'subtractDecimals' },
+    { path: '/calculator/multiplyDecimals', calcType: 'multiplyDecimals' },
+    { path: '/calculator/divideDecimals', calcType: 'divideDecimals' },
     // Distance Calculators
     { path: '/calculator/distance2D', calcType: 'distance2D' },
     { path: '/calculator/distanceMidpoint', calcType: 'distanceMidpoint' },
     { path: '/calculator/distanceSlope', calcType: 'distanceSlope' },
+    // Fraction Calculators
+    { path: '/calculator/addFractions', calcType: 'addFractions' },
+    { path: '/calculator/subtractFractions', calcType: 'subtractFractions' },
+    { path: '/calculator/multiplyFractions', calcType: 'multiplyFractions' },
+    { path: '/calculator/divideFractions', calcType: 'divideFractions' },
+    { path: '/calculator/simplifyFractions', calcType: 'simplifyFractions' },
     // Percentage Calculators
     { path: '/calculator/percentageOf', calcType: 'percentageOf' },
     { path: '/calculator/increaseByPercentage', calcType: 'increaseByPercentage' },

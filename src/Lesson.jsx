@@ -44,6 +44,14 @@ const lessonMapping = {
     percentageIncrease: catData.percentage,
     percentageDecrease: catData.percentage,
     percentageOfTotal: catData.percentage,
+    addFractions: catData.fractions,
+    subtractFractions: catData.fractions,
+    multiplyFractions: catData.fractions,
+    divideFractions: catData.fractions,
+    addDecimals: catData.decimals,  
+    subtractDecimals: catData.decimals,  
+    multiplyDecimals: catData.decimals, 
+    divideDecimals: catData.decimals,
 };
 
 const Lesson = ({ calcType }) => {

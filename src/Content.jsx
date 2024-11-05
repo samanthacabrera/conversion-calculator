@@ -8,13 +8,13 @@ const Content = () => {
                 <h3 className="text-2xl font-bold tracking-tighter mb-4">Frequently Asked Questions</h3>
                 <div className="text-lg space-y-4">
                     <h4 className="text-xl">What is Calcalooza?</h4>
-                    <p className="pl-6 text-gray-700">Calcalooza is an online calculator platform designed to simplify various calculations. Our user-friendly interface features multiple calculators designed to make calculations easy and accessible.</p>
+                    <p className="pl-0 lg:pl-6 text-gray-700">Calcalooza is an online calculator platform designed to simplify various calculations. Our user-friendly interface features multiple calculators designed to make calculations easy and accessible.</p>
 
                     <h4 className="text-xl">Are the calculators regularly updated?</h4>
-                    <p className="pl-6 text-gray-700">Yes, we continuously update our calculators to ensure accuracy and add new features based on user feedback. Stay tuned for updates on new calculators or enhancements.</p>
+                    <p className="pl-0 lg:pl-6 text-gray-700">Yes, we continuously update our calculators to ensure accuracy and add new features based on user feedback. Stay tuned for updates on new calculators or enhancements.</p>
 
                     <h4 className="text-xl">What should I do if I encounter an issue while using Calcalooza?</h4>
-                    <p className="pl-6 text-gray-700">
+                    <p className="pl-0 lg:pl-6 text-gray-700">
                         If you experience any issues, please reach out to our support team by clicking <a href="mailto:samanthal.n.cabrera@gmail.com?subject=Calcalooza%20Feedback" className="text-blue-600 hover:underline">here</a>.
                     </p>
                 </div>
@@ -44,7 +44,7 @@ const Content = () => {
                 <h3 className="text-2xl font-bold tracking-tighter mb-4">Educational Resources</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">At Calcalooza, we encourage our users to utilize our tools for learning and growth. To support this, we have compiled a variety of educational resources tailored to different skill levels and needs.</p>
                 <p className="text-lg text-gray-700 leading-relaxed">We recommend exploring the following educational resources:</p>
-                <ul className="list-disc ml-8 space-y-2 mt-4 text-lg text-gray-700 leading-relaxed">
+                <ul className="list-disc ml-6 space-y-2 mt-4 text-lg text-gray-700 leading-relaxed">
                     <li>
                         <a href="https://www.khanacademy.org" className="text-blue-600" target="_blank" rel="noopener noreferrer">Khan Academy</a> - Offers a large variety of tutorials covering subjects from basic math to advanced calculus.
                     </li>

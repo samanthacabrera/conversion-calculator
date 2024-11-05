@@ -23,6 +23,23 @@ const catData = {
             "Square Units": "The units used to measure area, such as square meters or square feet.",
         },
     },
+    decimals: {
+        title: "Decimals",
+        definition: "Decimals are a way of representing numbers that are not whole, using a decimal point to separate the whole number part from the fractional part.",
+        importance: "Understanding decimals is crucial for various everyday tasks, like shopping, cooking, and budgeting. Decimals allow us to work with values that are not whole numbers, making them essential in contexts such as measuring distances, calculating money, and analyzing data. For example, if you buy three apples at $1.25 each, you need to use decimals to find out the total cost.",
+        history: "The concept of decimals dates back to ancient times, but the decimal system as we know it was popularized by the Persian mathematician Al-Khwarizmi and later by European mathematicians in the Renaissance. Before decimals, people used fractions to represent parts of a whole. The introduction of the decimal point allowed for easier calculations and a clearer understanding of numbers. In the 16th century, the decimal system began to gain widespread acceptance in Europe, transforming mathematics and commerce.",
+        realLifeApplications: "Decimals are used everywhere in daily life. In cooking, recipes often require measurements like 0.5 cups of sugar or 1.75 teaspoons of salt. In finance, prices are commonly expressed in decimal form, such as $2.99 for a candy bar. Additionally, athletes use decimals to track their performance times, like running 100 meters in 9.58 seconds.",
+        funFact: "Did you know that if you lined up a decimal point after a one followed by 100 zeros, it would represent a number called a 'googol'? A googol is so large that it’s more than the number of atoms in the observable universe! It’s an example of how decimals can help us think about really big numbers.",
+        keyTakeaways: [
+            "Decimals help us express fractions in a different way, making them easier to use in calculations.",
+            "They are essential in everyday tasks like shopping, cooking, and measuring.",
+            "Understanding decimals is important for budgeting and financial literacy."
+        ],
+        glossary: {
+            "Decimal": "A number that represents a fraction expressed in a base-10 system, typically using a decimal point.",
+            "Decimal Point": "The dot used to separate the whole number part from the fractional part of a decimal."
+        },
+    },
     distance: {
         title: "Distance",
         definition: "Distance measures how far apart two points are, either in a straight line or along a path.",
@@ -42,6 +59,31 @@ const catData = {
         glossary: {
             "Distance": "The amount of space between two points.",
             "Kilometer": "A unit of distance equal to 1,000 meters.",
+        },
+    },
+    fractions: {
+        title: "Fractions",
+        definition: "A fraction represents a part of a whole, consisting of a numerator (the top number) and a denominator (the bottom number).",
+        importance: "Understanding fractions is crucial for everyday activities, such as cooking, measuring, and managing finances. Fractions allow us to describe quantities that are not whole numbers, making them essential in many real-life situations, from sharing food to analyzing data.",
+        history: "The concept of fractions dates back to ancient civilizations, including the Egyptians, who used simple fractions in their measurements. The ancient Greeks developed a more formal understanding of fractions, using them in geometry and mathematics. Over time, the representation and understanding of fractions evolved, with Indian mathematicians introducing the use of zero and negative numbers, which expanded the concept of fractions. By the Middle Ages, fractions were widely used in trade and commerce, leading to the development of more advanced mathematical principles and operations involving fractions.",
+        formulas: [
+            { description: "To add fractions with a common denominator", formula: "a/b + c/b = (a + c)/b", explanation: "Simply add the numerators while keeping the denominator the same." },
+            { description: "To add fractions with different denominators", formula: "a/b + c/d = (ad + bc) / (bd)", explanation: "Find a common denominator by multiplying the two denominators, then adjust the numerators accordingly." },
+            { description: "To multiply fractions", formula: "(a/b) × (c/d) = (a × c) / (b × d)", explanation: "Multiply the numerators together and the denominators together." },
+            { description: "To divide fractions", formula: "(a/b) ÷ (c/d) = (a × d) / (b × c)", explanation: "Multiply by the reciprocal of the second fraction." },
+        ],
+        realLifeApplications: "Fractions are commonly used in cooking, where recipes often require measurements in fractions (e.g., 1/2 cup of sugar). They are also important in construction, where measurements are frequently expressed as fractions of an inch. In finance, understanding fractions can help with calculating discounts or interest rates. Fractions play a crucial role in education, helping students understand ratios, proportions, and more complex mathematical concepts.",
+        funFact: "Did you know that when you cut a pizza in half, you’re creating the fraction 1/2? If you take one of those halves and cut it in half again, you get two pieces that are each 1/4 of the whole pizza! So, if you ever have a pizza party, remember: sharing is all about fractions!",
+        keyTakeaways: [
+            "Fractions express parts of a whole and are essential in everyday life.",
+            "They can be added, subtracted, multiplied, and divided using specific rules.",
+            "Understanding fractions is foundational for higher-level math concepts."
+        ],
+        glossary: {
+            "Numerator": "The top part of a fraction, representing how many parts we have.",
+            "Denominator": "The bottom part of a fraction, indicating the total number of equal parts in a whole.",
+            "Mixed Number": "A whole number combined with a fraction, such as 2 1/2.",
+            "Improper Fraction": "A fraction where the numerator is greater than or equal to the denominator, such as 5/4."
         },
     },
     percentage: {
