@@ -29,7 +29,7 @@ const Search = () => {
     };
 
   return (
-    <div className="invisible lg:visible absolute top-2 right-2 max-w-xs w-full z-50">
+    <div className="invisible lg:visible absolute top-2 right-2 max-w-60 w-full z-50">
       <input
         type="text"
         placeholder="What are you trying to solve?"

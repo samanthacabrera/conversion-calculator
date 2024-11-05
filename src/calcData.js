@@ -280,8 +280,8 @@ export const calcData = {
                 "Multiply the result by the total (T) to find the final result."
             ],
             dimensions: [
-                { name: "Percentage", definition: "The portion of a whole expressed as a fraction of 100." },
-                { name: "Total", definition: "The whole number from which the percentage is taken." }
+                { name: "Total", definition: "The whole number from which the percentage is taken." },
+                { name: "Percentage", definition: "The portion of a whole expressed as a fraction of 100." }
             ],
             wordProblem: "What is 25% of 200?",
             units: { result: 'units' },
@@ -292,7 +292,11 @@ export const calcData = {
             color: "purple",
             desc: "Calculates the new amount after increasing a number by a certain percentage.",
             formula: "New Amount = Original Amount + (Percentage / 100) × Original Amount",
-            calculate: (percentage, originalAmount) => originalAmount + (percentage / 100) * originalAmount,
+            calculate: (originalAmount, percentage) => {
+                const increase = (percentage / 100) * originalAmount;
+                const newAmount = originalAmount + increase;
+                return newAmount;
+            },
             steps: [
                 "Identify the original amount (O) and the percentage increase (P).",
                 "Write down the formula: New Amount = O + (P / 100) × O.",
@@ -312,7 +316,11 @@ export const calcData = {
             color: "lime",
             desc: "Calculates the new amount after decreasing a number by a certain percentage.",
             formula: "New Amount = Original Amount - (Percentage / 100) × Original Amount",
-            calculate: (percentage, originalAmount) => originalAmount - (percentage / 100) * originalAmount,
+            calculate: (originalAmount, percentage) => {
+                const decrease = (percentage / 100) * originalAmount;
+                const newAmount = originalAmount - decrease;
+                return newAmount;
+            },
             steps: [
                 "Identify the original amount (O) and the percentage decrease (P).",
                 "Write down the formula: New Amount = O - (P / 100) × O.",
