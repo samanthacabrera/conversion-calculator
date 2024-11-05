@@ -7,6 +7,7 @@ const Filter = ({ onSelectCategory }) => {
         { name: 'AllCalculators', color: 'bg-lime-200' },
         { name: 'AreaCalculators', color: 'bg-pink-200' },
         { name: 'DistanceCalculators', color: 'bg-yellow-200' },
+        { name: 'PercentageCalculators', color: 'bg-sky-200' },
         { name: 'PerimeterCalculators', color: 'bg-orange-200' },
         { name: 'SurfaceAreaCalculators', color: 'bg-purple-200' },
         { name: 'VolumeCalculators', color: 'bg-sky-200' },

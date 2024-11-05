@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; 
-import { calcData } from './data';
+import { calcData } from './calcData';
 import { calculatorRoutes } from './routes'; 
 
 const Glossary = () => {

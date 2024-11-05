@@ -265,6 +265,127 @@ export const calcData = {
             units: { slope: 'units/unit' },
         },
     },
+    PercentageCalculators: {
+        percentageOf: {
+            calcType: "percentageOf",
+            label: "Percentage of a Number",
+            color: "yellow",
+            desc: "Calculates what a specific percentage of a given number is.",
+            formula: "Result = (Percentage / 100) × Total",
+            calculate: (percentage, total) => (percentage / 100) * total,
+            steps: [
+                "Identify the percentage you want to calculate (P) and the total number (T).",
+                "Write down the formula: Result = (P / 100) × T.",
+                "Divide the percentage (P) by 100.",
+                "Multiply the result by the total (T) to find the final result."
+            ],
+            dimensions: [
+                { name: "Percentage", definition: "The portion of a whole expressed as a fraction of 100." },
+                { name: "Total", definition: "The whole number from which the percentage is taken." }
+            ],
+            wordProblem: "What is 25% of 200?",
+            units: { result: 'units' },
+        },
+        increaseByPercentage: {
+            calcType: "increaseByPercentage",
+            label: "Increase a Number by Percentage",
+            color: "purple",
+            desc: "Calculates the new amount after increasing a number by a certain percentage.",
+            formula: "New Amount = Original Amount + (Percentage / 100) × Original Amount",
+            calculate: (percentage, originalAmount) => originalAmount + (percentage / 100) * originalAmount,
+            steps: [
+                "Identify the original amount (O) and the percentage increase (P).",
+                "Write down the formula: New Amount = O + (P / 100) × O.",
+                "Calculate the increase by dividing the percentage (P) by 100 and multiplying by the original amount (O).",
+                "Add the increase to the original amount (O) to get the new amount."
+            ],
+            dimensions: [
+                { name: "Original Amount", definition: "The initial value before the increase." },
+                { name: "Percentage Increase", definition: "The percentage by which the original amount is to be increased." }
+            ],
+            wordProblem: "If you increase 100 by 15%, what is the new amount?",
+            units: { newAmount: 'units' },
+        },
+        decreaseByPercentage: {
+            calcType: "decreaseByPercentage",
+            label: "Decrease a Number by Percentage",
+            color: "lime",
+            desc: "Calculates the new amount after decreasing a number by a certain percentage.",
+            formula: "New Amount = Original Amount - (Percentage / 100) × Original Amount",
+            calculate: (percentage, originalAmount) => originalAmount - (percentage / 100) * originalAmount,
+            steps: [
+                "Identify the original amount (O) and the percentage decrease (P).",
+                "Write down the formula: New Amount = O - (P / 100) × O.",
+                "Calculate the decrease by dividing the percentage (P) by 100 and multiplying by the original amount (O).",
+                "Subtract the decrease from the original amount (O) to get the new amount."
+            ],
+            dimensions: [
+                { name: "Original Amount", definition: "The initial value before the decrease." },
+                { name: "Percentage Decrease", definition: "The percentage by which the original amount is to be decreased." }
+            ],
+            wordProblem: "If you decrease 200 by 10%, what is the new amount?",
+            units: { newAmount: 'units' },
+        },
+        percentageIncrease: {
+            calcType: "percentageIncrease",
+            label: "Percentage Increase",
+            color: "orange",
+            desc: "Calculates the percentage increase from an original value to a new value.",
+            formula: "Percentage Increase = ((New Value - Original Value) / Original Value) × 100",
+            calculate: (originalValue, newValue) => ((newValue - originalValue) / originalValue) * 100,
+            steps: [
+                "Identify the original value and the new value.",
+                "Subtract the original value from the new value.",
+                "Divide the result by the original value.",
+                "Multiply the quotient by 100 to get the percentage increase."
+            ],
+            dimensions: [
+                { name: "Original Value", definition: "The initial value before the increase." },
+                { name: "New Value", definition: "The value after the increase." }
+            ],
+            wordProblem: "If the price of a product increases from $50 to $70, what is the percentage increase?",
+            units: { percentage: '%' },
+        },
+        percentageDecrease: {
+            calcType: "percentageDecrease",
+            label: "Percentage Decrease",
+            color: "yellow",
+            desc: "Calculates the percentage decrease from an original value to a new value.",
+            formula: "Percentage Decrease = ((Original Value - New Value) / Original Value) × 100",
+            calculate: (originalValue, newValue) => ((originalValue - newValue) / originalValue) * 100,
+            steps: [
+                "Identify the original value and the new value.",
+                "Subtract the new value from the original value.",
+                "Divide the result by the original value.",
+                "Multiply the quotient by 100 to get the percentage decrease."
+            ],
+            dimensions: [
+                { name: "Original Value", definition: "The initial value before the decrease." },
+                { name: "New Value", definition: "The value after the decrease." }
+            ],
+            wordProblem: "If the price of a product decreases from $100 to $80, what is the percentage decrease?",
+            units: { percentage: '%' },
+        },
+        percentageOfTotal: {
+            calcType: "percentageOfTotal",
+            label: "Percentage of Total",
+            color: "purple",
+            desc: "Calculates what percentage a part is of a whole.",
+            formula: "Percentage of Total = (Part / Whole) × 100",
+            calculate: (part, whole) => (part / whole) * 100,
+            steps: [
+                "Identify the part and the whole.",
+                "Divide the part by the whole.",
+                "Multiply the quotient by 100 to find the percentage."
+            ],
+            dimensions: [
+                { name: "Part", definition: "The portion of the whole that you want to find the percentage of." },
+                { name: "Whole", definition: "The total or complete amount." }
+            ],
+            wordProblem: "If a student scores 45 out of 60 on a test, what percentage did they score?",
+            units: { percentage: '%' },
+        },
+    },
     PerimeterCalculators: {
         perimeterCircle: {
             calcType: "perimeterCircle",

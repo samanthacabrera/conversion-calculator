@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { calculatorRoutes } from './routes';
-import { calcData } from './data'; 
+import { calcData } from './calcData'; 
 
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -29,7 +29,7 @@ const Search = () => {
     };
 
   return (
-    <div className="invisible lg:visible absolute top-4 right-4 max-w-xs w-full z-50">
+    <div className="invisible lg:visible absolute top-2 right-2 max-w-xs w-full z-50">
       <input
         type="text"
         placeholder="What are you trying to solve?"

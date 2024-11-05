@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { calcData } from './data';
+import { calcData } from './calcData';
 
 const Calculator = ({ calcType, condensed }) => {
     const calcInfo = Object.values(calcData).flatMap(Object.values).find(calc => calc.calcType === calcType);

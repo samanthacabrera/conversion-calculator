@@ -19,7 +19,7 @@ const catData = {
             "Area is applicable in real life, from landscaping to designing buildings."
         ],
         glossary: {
-            // "Area": "The extent of a two-dimensional surface enclosed within a boundary.",
+            "Area": "The extent of a two-dimensional surface enclosed within a boundary.",
             "Square Units": "The units used to measure area, such as square meters or square feet.",
         },
     },
@@ -40,8 +40,31 @@ const catData = {
             "Understanding distance is crucial for navigation, construction, and science."
         ],
         glossary: {
-            // "Distance": "The amount of space between two points.",
+            "Distance": "The amount of space between two points.",
             "Kilometer": "A unit of distance equal to 1,000 meters.",
+        },
+    },
+    percentage: {
+        title: "Percentage",
+        definition: "A percentage is a way of expressing a number as a fraction of 100, representing a part of a whole.",
+        importance: "Understanding percentages is crucial in everyday life, from calculating discounts during shopping to understanding statistics in the news. They are widely used in finance, business, and education, helping individuals make informed decisions based on numerical data.",
+        history: "The concept of percentage dates back to ancient civilizations where it was used in trade and commerce to calculate taxes and interest rates. The term 'percentage' itself comes from the Latin phrase 'per centum,' meaning 'by the hundred.' During the Renaissance, the study of percentages became more formalized, and mathematicians began developing methods for calculating percentages in various contexts, including finance and statistics. Today, the percentage is a fundamental concept taught in schools and used universally in mathematical applications.",
+        formulas: [
+            { description: "To calculate a percentage", formula: "Percentage = (Part / Whole) × 100", explanation: "This formula allows you to find out what percentage one number is of another." },
+            { description: "Finding the part when given the percentage", formula: "Part = (Percentage × Whole) / 100", explanation: "This is used to determine the actual value based on the percentage." },
+            { description: "Finding the whole when given the part and percentage", formula: "Whole = (Part / Percentage) × 100", explanation: "This formula helps to find out the total based on the part and its percentage." },
+        ],
+        realLifeApplications: "Percentages are used in various situations, such as calculating sales tax, determining discounts during sales, and analyzing data in reports. In finance, understanding interest rates, loan payments, and investment returns often involves percentages. In health, body mass index (BMI) calculations use percentages to determine body fat. In academics, grades are often reported as percentages, making it easier for students to gauge their performance.",
+        funFact: "Did you know that about 71% of the Earth is covered by water? That's enough to fill a whole lot of swimming pools—over 326 million trillion gallons, to be exact!",
+        keyTakeaways: [
+            "Percentages represent a part of a whole expressed in hundredths.",
+            "They are widely used in finance, statistics, and everyday decision-making.",
+            "Understanding how to calculate percentages is essential for various real-life applications."
+        ],
+        glossary: {
+            "Percentage": "A fraction expressed as a part of 100.",
+            "Discount": "A reduction in the usual price of something, often expressed as a percentage.",
+            "Interest Rate": "The percentage of a loan or investment that is charged as interest to the borrower or earned by the investor."
         },
     },
     perimeter: {
@@ -62,7 +85,7 @@ const catData = {
             "Perimeter is relevant in planning and construction."
         ],
         glossary: {
-            // "Perimeter": "The total length of the boundaries of a two-dimensional shape.",
+            "Perimeter": "The total length of the boundaries of a two-dimensional shape.",
             "Linear Units": "The units used to measure perimeter, such as meters or feet.",
         },
     },
@@ -84,7 +107,7 @@ const catData = {
             "Surface area is significant in engineering and product design."
         ],
         glossary: {
-            // "Surface Area": "The total area of the exterior surface of a three-dimensional object.",
+            "Surface Area": "The total area of the exterior surface of a three-dimensional object.",
             "Three-Dimensional": "An object that has width, height, and depth.",
         },
     },
@@ -106,7 +129,7 @@ const catData = {
             "Volume is essential in many fields, including science and engineering."
         ],
         glossary: {
-            // "Volume": "The amount of space an object occupies.",
+            "Volume": "The amount of space an object occupies.",
             "Cubic Units": "The units used to measure volume, such as cubic meters or liters.",
         },
     },

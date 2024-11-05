@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { calcData } from './data';
+import { calcData } from './calcData';
 import { calculatorRoutes } from './routes';
 import Calculator from './Calculator';
 import Lesson from './Lesson';
@@ -45,7 +45,7 @@ const Page = ({ calcType }) => {
             <nav className="p-8">
                 <h2 className="text-xl font-semibold">Contents</h2>
                 <div className="flex flex-col space-y-1 mt-2">
-                    {["Introduction", "Calculator", "Formula", "Steps", "Definitions", "Problems", "Related Calculators"].map((item, index) => (
+                    {["Introduction", "Calculator", "Formula", "Steps", "Definitions", "Problems", "Overview", "Related Calculators"].map((item, index) => (
                         <a key={index} href={`#${item.toLowerCase().replace(" ", "")}`} className="text-gray-600 hover:text-lime-400 transition duration-200">
                             {item}
                         </a>
@@ -122,7 +122,10 @@ const Page = ({ calcType }) => {
                     </section>
                 )}
 
-                <Lesson calcType={calcType}/>
+
+                <section id="overview">
+                    <Lesson calcType={calcType}/>
+                </section>
 
                 {/* Related Calculators */}
                 {relatedCalculators.length > 0 && (

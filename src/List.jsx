@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { calcData } from './data';
+import { calcData } from './calcData';
 import Calculator from './Calculator'; 
 import { Squares2X2Icon, ListBulletIcon } from '@heroicons/react/24/outline'; 
 
@@ -25,7 +25,7 @@ const List = ({ selectedCategory }) => {
 
     return (
         <div className="relative w-full flex flex-col items-center">
-            <div className="fixed top-4 left-4">
+            <div className="fixed top-2 left-2">
                  <button 
                 onClick={toggleView} 
                 className="transition duration-300 hover:scale-105 flex items-center">

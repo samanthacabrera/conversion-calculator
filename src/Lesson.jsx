@@ -38,6 +38,12 @@ const lessonMapping = {
     volumePyramid: catData.volume,
     volumePipe: catData.volume,
     volumeTriangularPrism: catData.volume,
+    percentageOf: catData.percentage,
+    increaseByPercentage: catData.percentage,
+    decreaseByPercentage: catData.percentage,
+    percentageIncrease: catData.percentage,
+    percentageDecrease: catData.percentage,
+    percentageOfTotal: catData.percentage,
 };
 
 const Lesson = ({ calcType }) => {

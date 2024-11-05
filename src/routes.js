@@ -13,6 +13,13 @@ export const calculatorRoutes = [
     { path: '/calculator/distance2D', calcType: 'distance2D' },
     { path: '/calculator/distanceMidpoint', calcType: 'distanceMidpoint' },
     { path: '/calculator/distanceSlope', calcType: 'distanceSlope' },
+    // Percentage Calculators
+    { path: '/calculator/percentageOf', calcType: 'percentageOf' },
+    { path: '/calculator/increaseByPercentage', calcType: 'increaseByPercentage' },
+    { path: '/calculator/decreaseByPercentage', calcType: 'decreaseByPercentage' },
+    { path: '/calculator/percentageIncrease', calcType: 'percentageIncrease' },
+    { path: '/calculator/percentageDecrease', calcType: 'percentageDecrease' },
+    { path: '/calculator/percentageOfTotal', calcType: 'percentageOfTotal' },
     // Perimeter Calculators
     { path: '/calculator/perimeterTriangle', calcType: 'perimeterTriangle' },
     { path: '/calculator/perimeterCircle', calcType: 'perimeterCircle' },
