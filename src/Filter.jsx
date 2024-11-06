@@ -23,7 +23,9 @@ const Filter = ({ onSelectCategory }) => {
     };
 
     const [selectedConcept, setSelectedConcept] = useState('Basic Math');
-    const [filteredCategories, setFilteredCategories] = useState(allCategories); 
+    const [filteredCategories, setFilteredCategories] = useState(
+    allCategories.filter(cat => conceptToCategories['Geometry'].includes(cat.name))
+);
     const navigate = useNavigate();
 
     const handleConceptClick = (concept) => {
