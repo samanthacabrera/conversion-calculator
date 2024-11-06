@@ -12,13 +12,13 @@ import Search from './Search';
 
 const App = () => {
   const [selectedCategory, setSelectedCategory] = useState('AllCalculators');
-
+  const [showModal, setShowModal] = useState(false);
   return (
     <Router>
       <div className="flex flex-col items-center min-h-screen text-gray-800">
         
         <Header />
-        <Search/>
+        <Search showModal={showModal} setShowModal={setShowModal}/>
 
         <Routes>
           <Route path="/" element={

@@ -7,7 +7,6 @@ const Filter = ({ onSelectCategory }) => {
     const allCategories = [
         { name: 'AllCalculators', color: 'bg-lime-200' },
         { name: 'AreaCalculators', color: 'bg-pink-200' },
-        { name: 'DecimalCalculators', color: 'bg-lime-200' },
         { name: 'DistanceCalculators', color: 'bg-yellow-200' },
         { name: 'ExponentCalculators', color: 'bg-lime-200' },
         { name: 'PercentageCalculators', color: 'bg-sky-200' },
@@ -17,7 +16,7 @@ const Filter = ({ onSelectCategory }) => {
     ];
 
     const conceptToCategories = {
-        'Basic Math': ['AllCalculators', 'DecimalCalculators', 'ExponentCalculators', 'PercentageCalculators' ],
+        'Basic Math': ['AllCalculators', 'ExponentCalculators', 'PercentageCalculators' ],
         'Algebra': ['AllCalculators', 'DistanceCalculators'],
         'Geometry': ['AllCalculators', 'AreaCalculators', 'PerimeterCalculators', 'SurfaceAreaCalculators', 'VolumeCalculators'],
     };
