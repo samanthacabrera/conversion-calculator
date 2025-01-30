@@ -89,7 +89,7 @@ const Header = () => {
                 {filteredEntries.map(({ calcType, label }) => (
                     <li
                     key={calcType}
-                    onClick={() => handleNavigation(calcType)} // Close search bar after navigating
+                    onClick={() => handleNavigation(calcType)} 
                     className="px-4 py-2 text-white cursor-pointer hover:bg-white hover:text-black transition-colors duration-150"
                     >
                     {label}

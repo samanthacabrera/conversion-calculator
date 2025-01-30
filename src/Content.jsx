@@ -30,16 +30,6 @@ const Content = () => {
                 </p>
             </section>
 
-            {/* <section className="my-6 py-12 border-b border-gray-300 space-y-4">
-                <h3 className="text-2xl font-bold tracking-tighter mb-4">Upcoming Features</h3>
-                <p className="text-lg text-gray-700 leading-relaxed">
-                    One of our most anticipated features is the <strong>Distance Calculators</strong>. For 2D space, users can easily input the coordinates of two points on a Cartesian plane, and the calculator will utilize the distance formula to provide an accurate measurement of the straight-line distance between them. Users will also be able to find distances between points in three-dimensional space.
-                </p>
-                <p className="text-lg text-gray-700 leading-relaxed">
-                    Additionally, we are developing a <strong>Slope Calculator</strong>. By simply inputting the rise and run values, users can obtain precise slope measurements that are essential for various projects. 
-                </p>
-            </section> */}
-
             <section className="my-6 py-12 border-b border-gray-300 space-y-4">
                 <h3 className="text-2xl font-bold tracking-tighter mb-4">Educational Resources</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">At Calcalooza, we encourage our users to utilize our tools for learning and growth. To support this, we have compiled a variety of educational resources tailored to different skill levels and needs.</p>

@@ -31,7 +31,7 @@ const Calculator = ({ calcType, condensed }) => {
             <Link
                 to={`/calculator/${calcType}`}
                 onClick={handleScrollToTop}
-                className="text-xl font-bold tracking-tighter mb-3 hover:underline decoration-dotted decoration-2 underline-offset-4">
+                className="text-xl font-bold tracking-tighter uppercase mb-3 hover:underline decoration-dotted decoration-2 underline-offset-4">
                 {calcInfo.label}
             </Link>
 
