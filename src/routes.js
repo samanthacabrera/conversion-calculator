@@ -13,12 +13,6 @@ export const calculatorRoutes = [
     { path: '/calculator/distance2D', calcType: 'distance2D' },
     { path: '/calculator/distanceMidpoint', calcType: 'distanceMidpoint' },
     { path: '/calculator/distanceSlope', calcType: 'distanceSlope' },
-    // Exponent Calculators
-    { path: '/calculator/basicExponent', calcType: 'basicExponent' },
-    { path: '/calculator/fractionalExponent', calcType: 'fractionalExponent' },
-    { path: '/calculator/negativeExponent', calcType: 'negativeExponent' },
-    { path: '/calculator/squareRoot', calcType: 'squareRoot' },
-    { path: '/calculator/nthRoot', calcType: 'nthRoot' },
     // Perimeter Calculators
     { path: '/calculator/perimeterTriangle', calcType: 'perimeterTriangle' },
     { path: '/calculator/perimeterCircle', calcType: 'perimeterCircle' },

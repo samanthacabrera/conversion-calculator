@@ -38,11 +38,6 @@ const lessonMapping = {
     volumePyramid: catData.volume,
     volumePipe: catData.volume,
     volumeTriangularPrism: catData.volume,
-    basicExponent: catData.exponents,  
-    fractionalExponent: catData.exponents, 
-    negativeExponent: catData.exponents,  
-    squareRoot: catData.exponents,  
-    nthRoot: catData.exponents, 
 };
 
 const Lesson = ({ calcType }) => {
