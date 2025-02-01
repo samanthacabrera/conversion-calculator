@@ -19,13 +19,6 @@ export const calculatorRoutes = [
     { path: '/calculator/negativeExponent', calcType: 'negativeExponent' },
     { path: '/calculator/squareRoot', calcType: 'squareRoot' },
     { path: '/calculator/nthRoot', calcType: 'nthRoot' },
-    // Percentage Calculators
-    { path: '/calculator/percentageOf', calcType: 'percentageOf' },
-    { path: '/calculator/increaseByPercentage', calcType: 'increaseByPercentage' },
-    { path: '/calculator/decreaseByPercentage', calcType: 'decreaseByPercentage' },
-    { path: '/calculator/percentageIncrease', calcType: 'percentageIncrease' },
-    { path: '/calculator/percentageDecrease', calcType: 'percentageDecrease' },
-    { path: '/calculator/percentageOfTotal', calcType: 'percentageOfTotal' },
     // Perimeter Calculators
     { path: '/calculator/perimeterTriangle', calcType: 'perimeterTriangle' },
     { path: '/calculator/perimeterCircle', calcType: 'perimeterCircle' },
